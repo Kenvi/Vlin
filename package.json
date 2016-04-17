@@ -2,7 +2,7 @@
   "name": "imooc",
   "version": "0.0.1",
   "description": "imooc",
-  "main": "demo.js",
+  "main": "app.js",
   "dependencies": {
     "body-parser": "^1.14.2",
     "express": "^4.13.4",

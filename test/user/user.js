@@ -13,7 +13,7 @@ function getRandomString(len){
 }
 
 const should = require('should');
-const app = require('../../demo');
+const app = require('../../app');
 const mongoose = require('mongoose');
 const User = require('../../app/models/user');
 //const User = mongoose.model('User');

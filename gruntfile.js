@@ -19,9 +19,9 @@ module.exports = function(grunt){
 
 		nodemon:{
 			dev:{
-				script:'demo.js',
+				script:'app.js',
 				options:{
-					// file:'demo.js',
+					// file:'app.js',
 					args:[],
 					ignoredFiles:['README.md','node_modules/**','.DS_Store'],
 					watchedExtensions:['js'],

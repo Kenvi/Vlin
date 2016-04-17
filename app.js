@@ -46,7 +46,9 @@ app.use(session({
 		collection:'sessions'
 	})
 }));
-if('development' === app.get('env')){
+
+var env = process.env.NODE_ENV || 'development';
+if('development' === env){
 	app.set('showStarkError',true);
 	app.use(logger(':method :url :status'));
 	app.locals.pretty = true;
