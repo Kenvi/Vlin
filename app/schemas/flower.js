@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 const ObjectId = Schema.Types.ObjectId;
 
-var MovieSchema  = new Schema({
+var FlowerSchema  = new Schema({
 	director : String,
 	title : String,
 	language : String,
@@ -30,7 +30,7 @@ var MovieSchema  = new Schema({
 	}
 })
 
-MovieSchema.pre('save', function(next){
+FlowerSchema.pre('save', function(next){
 	if(this.isNew){
 		this.meta.createAt = this.meta.updateAt = Date.now();
 	}else{
@@ -40,7 +40,7 @@ MovieSchema.pre('save', function(next){
 	next();
 })
 
-MovieSchema.statics = {
+FlowerSchema.statics = {
 	fetch : function(cb){
 		return this
 		.find({})
@@ -54,4 +54,4 @@ MovieSchema.statics = {
 	}
 }
 
-module.exports = MovieSchema;
+module.exports = FlowerSchema;

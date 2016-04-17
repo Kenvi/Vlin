@@ -1,4 +1,4 @@
-const Movie = require('../models/movie');
+const Flower = require('../models/flower');
 const Catetory = require('../models/catetory')
 
 
@@ -50,7 +50,7 @@ exports.search =  function(req,res){
 				})
 			})
 	}else{
-		Movie
+		Flower
 			.find({title:new RegExp(q+'.*','i')})
 			.exec(function(err,movies){
 				if(err){

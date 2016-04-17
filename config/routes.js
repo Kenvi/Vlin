@@ -1,4 +1,4 @@
-const Movie= require('../app/controllers/movie');
+const Flower= require('../app/controllers/flower');
 const Index = require('../app/controllers/index');
 const User = require('../app/controllers/user');
 const Comment = require('../app/controllers/comment');
@@ -26,13 +26,13 @@ module.exports = function(app){
 	app.delete('/admin/user/list',User.signinRequest,User.adminRequest, User.del);
 
 
-	//Movie
-	app.get('/movie/:id',Movie.detail);
-	app.get('/admin/movie/new',User.signinRequest,User.adminRequest,Movie.new);
-	app.get('/admin/movie/update/:id',User.signinRequest,User.adminRequest,Movie.update);
-	app.post('/admin/movie',User.signinRequest,User.adminRequest,Movie.savePoster,Movie.save);
-	app.get('/admin/movie/list',User.signinRequest,User.adminRequest,Movie.list);
-	app.delete('/admin/movie/list',User.signinRequest,User.adminRequest, Movie.del);
+	//Flower
+	app.get('/flower/:id',Flower.detail);
+	app.get('/admin/flower/new',User.signinRequest,User.adminRequest,Flower.new);
+	app.get('/admin/flower/update/:id',User.signinRequest,User.adminRequest,Flower.update);
+	app.post('/admin/flower',User.signinRequest,User.adminRequest,Flower.savePoster,Flower.save);
+	app.get('/admin/flower/list',User.signinRequest,User.adminRequest,Flower.list);
+	app.delete('/admin/flower/list',User.signinRequest,User.adminRequest, Flower.del);
 
 	//Comment
 	app.post('/user/comment',User.signinRequest,Comment.save);

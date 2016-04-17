@@ -23,7 +23,7 @@ exports.save = function(req,res){
 				}
 				console.log(comment + '23333');
 
-				res.redirect('/movie/' + movieId);
+				res.redirect('/flower/' + movieId);
 			})
 		})
 	}else{
@@ -33,7 +33,7 @@ exports.save = function(req,res){
 				console.log(err);
 			}
 
-			res.redirect('/movie/' + movieId);
+			res.redirect('/flower/' + movieId);
 		})
 	}
 

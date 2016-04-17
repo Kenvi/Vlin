@@ -8,7 +8,7 @@ const ObjectId = Schema.Types.ObjectId;
 
 var CatetorySchema  = new Schema({
     name : String,
-    movies : [{type:ObjectId,ref:'Movie'}],
+    movies : [{type:ObjectId,ref:'Flower'}],
     meta : {
         createAt : {
             type : Date,

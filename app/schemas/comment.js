@@ -5,7 +5,7 @@ const ObjectId = Schema.Types.ObjectId;
 var CommentSchema  = new Schema({
 	movie:{
 		type:ObjectId,
-		ref:'Movie'
+		ref:'Flower'
 	},
 	from:{
 		type:ObjectId,
