@@ -12,11 +12,12 @@ block content
                         th 上映年份
                         th 录入时间
                         th 浏览量
+                        th 类别
                         th 查看
                         th 更新
                         th 删除
                     tbody
-                        each item in movies
+                        each item in flowers
                             tr(class="item-id-#{item._id}")
                                 td #{item.title}
                                 td #{item.director}
@@ -24,8 +25,9 @@ block content
                                 td #{item.year}
                                 td #{moment(item.meta.updateAt).format('MM/DD/YYYY')}
                                 td #{item.pv}
-                                td: a(target="_blank",href="/movie/#{item._id}") 查看
-                                td: a(target="_blank",href="/admin/movie/update/#{item._id}") 修改
+                                td #{item.catetory}
+                                td: a(target="_blank",href="/flower/#{item._id}") 查看
+                                td: a(target="_blank",href="/admin/flower/update/#{item._id}") 修改
                                 td
-                                    button.btn.btn-danger.del(type="button",data-id="#{item._id}",data-class="movie")  删除
+                                    button.btn.btn-danger.del(type="button",data-id="#{item._id}",data-class="flower")  删除
     script(src="/js/admin.js")

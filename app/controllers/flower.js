@@ -10,10 +10,6 @@ const path = require('path');
 exports.detail = function(req,res){
 	var id  = req.params.id;
 
-	if(id){
-
-	}
-
 	Flower.update({_id:id},{$inc:{pv:1}},function(err){
 		if(err){
 			console.log(err);
@@ -51,13 +47,13 @@ exports.new = function(req,res){
 
 			title:'后台录入页',
 			catetories:catetories,
-			movie:{}
+			flower:{}
 		})
 	})
 
 }
 
-//admin update movie
+//admin update flower
 exports.update = function(req,res){
 	var id = req.params.id;
 
@@ -66,7 +62,7 @@ exports.update = function(req,res){
 			Catetory.find({},function(err,catetories){
 				res.render('admin',{
 					title:'后台更新页',
-					movie:flower,
+					flower:flower,
 					catetories:catetories
 				})
 			})
@@ -97,57 +93,86 @@ exports.savePoster = function(req,res,next){
 	}
 }
 
-//admin post movie
+//admin post flower
 exports.save = function(req,res){
-	var id = req.body.movie._id;
-	var movieObj = req.body.movie;
-	var _movie;
+	var id = req.body.flower._id;
+	var flowerObj = req.body.flower;
+	var _flower;
 
 	if(req.poster){
-		movieObj.poster = req.poster;
+		flowerObj.poster = req.poster;
 	}
 
-	if(id){
+	if(id){//该产品存在，变为修改更新
+
+		//清除原来的类别
+		Catetory
+			.find({flowers:id})
+			.exec(function(err,cat){
+				console.log(cat[0].flowers);
+				cat[0].flowers.remove(id);
+				console.log(id);
+				cat[0].save(function(err,cat){
+					console.log(cat.flowers);
+				})
+			});
+
+
+		//保存新数据
 		Flower.findById(id,function(err,flower){
 			if(err){
 				console.log(err);
 			}
-			_movie = _.extend(flower,movieObj);
-			_movie.save(function(err,flower){
+			_flower = _.extend(flower,flowerObj);
+			_flower.save(function(err,flower){
 				if(err){
 					console.log(err);
 				}
 
-				res.redirect('/flower/' + flower._id);
-			})
-		})
-	}else{
-		_movie = new Flower(movieObj);
+				Catetory.findById(flower.catetory,function(err,catetory){//保存新类别
+					if(err){
+						console.log(err);
+					}
+					catetory.flowers.push(id);
+					catetory.save(function(err,catetory){
+						console.log("==========================")
+						res.redirect('/flower/' + flower._id);
 
-		var catetoryId = movieObj.catetory;
-		var catetoryName =  movieObj.catetoryName;
+					})
+				})
+
+			})
+
+		})
+
+
+	}else{//产品不存在，新建产品
+		_flower = new Flower(flowerObj);
+
+		var catetoryId = flowerObj.catetory;//类别id
+		var catetoryName =  flowerObj.catetoryName;//类别名
 		//console.log(movieObj);
 
-		_movie.save(function(err,flower){
+		_flower.save(function(err,flower){
 			if(err){
 				console.log(err);
 			}
-			if(catetoryId){
+			if(catetoryId){//类别存在，添加产品进入该类
 				Catetory.findById(catetoryId,function(err,catetory){
-					catetory.movies.push(flower._id);
+					catetory.flowers.push(flower._id);
 					catetory.save(function(err,catetory){
 						res.redirect('/flower/' + flower._id);
 					})
 				})
-			}else if(catetoryName){
+			}else if(catetoryName){//类别不存在，新建类别，并保存产品进该类别
 				var catetory = new Catetory({
 					name:catetoryName,
-					movies:[flower._id]
+					flowers:[flower._id]
 				})
 				catetory.save(function(err,catetory){
 					flower.catetory = catetory._id;
-					flower.save(function(err,movie){
-						res.redirect('/flower/' + movie._id);
+					flower.save(function(err,flower){
+						res.redirect('/flower/' + flower._id);
 					})
 
 				})
@@ -166,17 +191,17 @@ exports.list = function(req,res){
 		}
 		res.render('list', {
 			title:'列表页',
-			movies:flowers
+			flowers:flowers
 		})
 	})
 
 }
 
-//list delete movie
+//list delete flower
 exports.del = function(req,res){
 	var id = req.query.id;
 	if(id){
-		Flower.remove({_id:id},function(err,movie){
+		Flower.remove({_id:id},function(err,flower){
 			if(err){
 				console.log(err);
 			}else{

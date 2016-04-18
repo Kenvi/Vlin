@@ -10,7 +10,7 @@ const mongoStore = require('connect-mongo')(session);
 const logger = require('morgan');
 const port = process.env.PORT || 3000 ;
 var app = express();
-var dbUrl = 'mongodb://127.0.0.1:27017/MongoDB';
+var dbUrl = 'mongodb://127.0.0.1:27017/vlin';
 var db = mongoose.connect(dbUrl);
 
 //models loading
@@ -48,11 +48,11 @@ app.use(session({
 }));
 
 var env = process.env.NODE_ENV || 'development';
-if('development' === env){
-	app.set('showStarkError',true);
-	app.use(logger(':method :url :status'));
+if('development' === env){//开发环境调试输出内容
+	app.set('showStarkError',true);//堆栈出错
+	app.use(logger(':method :url :status'));//输出请求方式 地址 状态吗
 	app.locals.pretty = true;
-	mongoose.set('debug',true);
+	mongoose.set('debug',true);//数据库变化输出
 }
 require('./config/routes')(app);
 app.use(express.static(path.join(__dirname, 'public')));

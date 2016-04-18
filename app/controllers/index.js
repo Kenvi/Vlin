@@ -6,7 +6,7 @@ const Catetory = require('../models/catetory')
 exports.index =  function(req,res){
 	Catetory
 		.find({})
-		.populate({path:'movies',options:{limit:5}})
+		.populate({path:'flowers',options:{limit:5}})
 		.exec(function(err,catetories){
 			if(err){
 				console.log(err);

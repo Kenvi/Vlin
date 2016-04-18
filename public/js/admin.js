@@ -30,13 +30,13 @@ $(function(){
 				crossDomain:true,
 				jsonp:'callback',
 				success:function(data){
-					$('#inputTitle').val(data.title),
-					$('#inputDirector').val(data.directors[0].name),
-					$('#inputCountry').val(data.countries[0]),
-					//$('#inputLanguage').val(data.languages[0]),
-					$('#inputPoster').val(data.images.large),
-					$('#inputYear').val(data.year),
-					$('#inputSummary').val(data.summary)
+					$('#inputTitle').val(data.title);
+					$('#inputDirector').val(data.directors[0].name);
+					$('#inputCountry').val(data.countries[0]);
+					//$('#inputLanguage').val(data.languages[0]);
+					$('#inputPoster').val(data.images.large);
+					$('#inputYear').val(data.year);
+					$('#inputSummary').val(data.summary);
 				}
 			})
 		}

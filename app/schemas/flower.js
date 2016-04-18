@@ -14,9 +14,11 @@ var FlowerSchema  = new Schema({
 	pv : {
 		type : Number,
 		default : 0
-	},catetory : {
+	},
+	catetory : {
 		type : ObjectId,
-		ref : 'Catetory'
+		ref : 'Catetory',
+		unique:true
 	},
 	meta : {
 		createAt : {
