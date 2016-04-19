@@ -29,8 +29,8 @@ exports.detail = function(req,res){
 						console.log(err);
 					}
 					res.render('detail', {
-						title:flower.title + '详情页',
-						movie:flower,
+						title:flower.title,
+						flower:flower,
 						comments:comments
 					})
 				})

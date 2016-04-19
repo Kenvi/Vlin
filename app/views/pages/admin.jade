@@ -11,7 +11,7 @@ block content
                 if flower._id
                     input(type="hidden",name="flower[_id]",value=flower._id)
                 .form-group
-                    label.col-sm-2.control-label(for="inputCatetory") 电影分类
+                    label.col-sm-2.control-label(for="inputCatetory") 产品分类
                     .col-sm-10
                         input#inputCatetory.form-control(type="text",name="flower[catetoryName]",value=flower.catetoryName)
                 .form-group
@@ -24,41 +24,37 @@ block content
                                 input(type="radio",name="flower[catetory]",value=cat._id)
                             | #{cat.name}
                 .form-group
-                    label.col-sm-2.control-label(for="inputTitle") 电影名称
+                    label.col-sm-2.control-label(for="inputTitle") 产品名称
                     .col-sm-10
                         input#inputTitle.form-control(type="text",name="flower[title]",value=flower.title)
                 .form-group
-                    label.col-sm-2.control-label(for="inputDirector") 电影导演
+                    label.col-sm-2.control-label(for="inputLocation") 地理分布
                     .col-sm-10
-                        input#inputDirector.form-control(type="text",name="flower[director]",value=flower.director)
+                        input#inputLocation.form-control(type="text",name="flower[location]",value=flower.location)
                 .form-group
-                    label.col-sm-2.control-label(for="inputCountry") 国家
+                    label.col-sm-2.control-label(for="inputCulture") 植物文化
                     .col-sm-10
-                        input#inputCountry.form-control(type="text",name="flower[country]",value=flower.country)
+                        input#inputCulture.form-control(type="text",name="flower[culture]",value=flower.culture)
                 .form-group
-                    label.col-sm-2.control-label(for="inputLanguage") 语言
+                    label.col-sm-2.control-label(for="inputScenarios") 应用场景
                     .col-sm-10
-                        input#inputLanguage.form-control(type="text",name="flower[language]",value=flower.language)
+                        input#inputScenarios.form-control(type="text",name="flower[scenarios]",value=flower.scenarios)
                 .form-group
-                    label.col-sm-2.control-label(for="inputPoster") 海报地址
+                    label.col-sm-2.control-label(for="inputPoster") 图片地址
                     .col-sm-10
                         input#inputPoster.form-control(type="text",name="flower[poster]",value=flower.poster)
                 .form-group
-                    label.col-sm-2.control-label(for="inputPoster") 海报上传
+                    label.col-sm-2.control-label(for="inputPoster") 图片上传
                     .col-sm-10
                         input#uploadPoster(type="file",name="uploadPoster")
                 .form-group
-                    label.col-sm-2.control-label(for="inputFlash") 片源地址
+                    label.col-sm-2.control-label(for="inputPrice") 价格
                     .col-sm-10
-                        input#inputFlash.form-control(type="text",name="flower[flash]",value=flower.flash)
+                        input#inputPrice.form-control(type="text",name="flower[price]",value=flower.price)
                 .form-group
-                    label.col-sm-2.control-label(for="inputYear") 上映年份
+                    label.col-sm-2.control-label(for="inputConservation") 养护方式
                     .col-sm-10
-                        input#inputYear.form-control(type="text",name="flower[year]",value=flower.year)
-                .form-group
-                    label.col-sm-2.control-label(for="inputSummary") 电影简介
-                    .col-sm-10
-                        input#inputSummary.form-control(type="text",name="flower[summary]",value=flower.summary)
+                        input#inputConservation.form-control(type="text",name="flower[conservation]",value=flower.conservation)
                 .form-group
                     .col-sm-offset-2.col-sm-10
                     button.btn.btn-default(type="submit")  录入

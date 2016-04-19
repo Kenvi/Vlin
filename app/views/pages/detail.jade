@@ -4,8 +4,8 @@ block content
     .container
         .row
             .col-md-7
-                embed(src="#{movie.flash}", allFullScreen="true", quality="high" ,width="720", height="600", align="center", type="application/x-shockwave-flash")
-                .panel.panel-defatul
+                img(src="/upload/#{flower.poster}", width="720", align="center")
+                //-.panel.panel-defatul
                     .panel-heading
                         h3 评论区
                     .panel-body
@@ -32,7 +32,7 @@ block content
                                                             |#{reply.to.name}:
                                                         p #{reply.content}
                                     hr
-                #comments
+                //-#comments
                     form#commentForm(method="POST" action="/user/comment")
                         if user
                             input(type="hidden",name="comment[movie]",value="#{movie._id}")
@@ -46,16 +46,16 @@ block content
                         div(style="height:50px;")
             .col-md-5
                 dl.dl-horizontal
-                    dt 电影名称
-                    dd #{movie.title}
-                    dt 导演
-                    dd #{movie.director}
-                    dt 国家
-                    dd #{movie.country}
-                    dt 语言
-                    dd #{movie.language}
-                    dt 上映年份
-                    dd #{movie.year}
-                    dt 简介
-                    dd #{movie.summary}
+                    dt 产品名称
+                    dd #{flower.title}
+                    dt 地理分布
+                    dd #{flower.location}
+                    dt 植物文化
+                    dd #{flower.culture}
+                    dt 应用场景
+                    dd #{flower.scenarios}
+                    dt 价格
+                    dd #{flower.price}
+                    dt 养护方式
+                    dd #{flower.conservation}
     script(src="/js/detail.js")

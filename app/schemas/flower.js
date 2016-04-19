@@ -3,14 +3,13 @@ const Schema = mongoose.Schema;
 const ObjectId = Schema.Types.ObjectId;
 
 var FlowerSchema  = new Schema({
-	director : String,
+	location : String,
 	title : String,
-	language : String,
-	country : String,
-	summary : String,
-	flash : String,
+	scenarios : String,
+	culture : String,
+	conservation : String,
+	price : String,
 	poster : String,
-	year : Number,
 	pv : {
 		type : Number,
 		default : 0
