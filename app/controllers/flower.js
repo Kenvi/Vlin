@@ -113,7 +113,7 @@ exports.save = function(req,res){
 				cat[0].flowers.remove(id);
 				console.log(id);
 				cat[0].save(function(err,cat){
-					console.log(cat.flowers);
+					if(err){console.log(err);}
 				})
 			});
 
@@ -135,7 +135,6 @@ exports.save = function(req,res){
 					}
 					catetory.flowers.push(id);
 					catetory.save(function(err,catetory){
-						console.log("==========================")
 						res.redirect('/flower/' + flower._id);
 
 					})
