@@ -30,7 +30,7 @@ exports.search =  function(req,res){
 		Catetory
 			.find({_id:catId})
 			.populate({
-				path:'movies',
+				path:'flowers',
 				select:'title poster'})
 			.exec(function(err,catetories){
 				if(err){
@@ -38,33 +38,33 @@ exports.search =  function(req,res){
 				}
 
 				var catetory = catetories[0] || {};
-				var movies = catetory.movies || [];
-				var results = movies.slice(index,index + count);
+				var flowers = catetory.flowers || [];
+				var results = flowers.slice(index,index + count);
 				res.render('results', {
 					title:'结果列表',
 					keyword:catetory.name,
 					currentPage:(page+1),
-					totalPage:Math.ceil(movies.length/count),
+					totalPage:Math.ceil(flowers.length/count),
 					query:'cat='+catId,
-					movies:results
+					flowers:results
 				})
 			})
 	}else{
 		Flower
 			.find({title:new RegExp(q+'.*','i')})
-			.exec(function(err,movies){
+			.exec(function(err,flowers){
 				if(err){
 					console.log(err);
 				}
 
-				var results = movies.slice(index,index + count);
+				var results = flowers.slice(index,index + count);
 				res.render('results', {
 					title:'结果列表',
 					keyword:q,
 					currentPage:(page+1),
-					totalPage:Math.ceil(movies.length/count),
+					totalPage:Math.ceil(flowers.length/count),
 					query:'q='+q,
-					movies:results
+					flowers:results
 				})
 			})
 	}

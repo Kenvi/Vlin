@@ -9,15 +9,15 @@ block content
             .panel-heading
                h3 #{keyword}
             .panel-body
-               if movies && movies.length > 0
-                  each item in movies
+               if flowers && flowers.length > 0
+                  each item in flowers
                      .col-md-2
                         .thumbnail
-                           a(href="/movie/#{item._id}")
-                              img(src="#{item.poster}",alt="#{item.title}")
+                           a(href="/flower/#{item._id}")
+                              img(src="/upload/#{item.poster}",alt="#{item.title}")
                            .caption
                               h3 #{item.title}
-                              p: a.btn.btn-primary(href="/movie/#{item._id}",role="button") 观看预告片
+                              p: a.btn.btn-primary(href="/flower/#{item._id}",role="button") 详情
          ul.pagination
             - for (var i=0;i<totalPage;i++){
                - if(currentPage == (i+1)){
