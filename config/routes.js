@@ -41,6 +41,7 @@ module.exports = function(app){
 	app.get('/admin/catetory/new',User.signinRequest,User.adminRequest,Catetory.new);
 	app.post('/admin/catetory',User.signinRequest,User.adminRequest,Catetory.save);
 	app.get('/admin/catetory/list',User.signinRequest,User.adminRequest,Catetory.list);
+	app.delete('/admin/catetory/list',User.signinRequest,User.adminRequest, Catetory.del);
 
 	//Results
 	app.get('/results',Index.search);

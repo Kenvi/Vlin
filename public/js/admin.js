@@ -11,12 +11,14 @@ $(function(){
 		})
 		.done(function(results){
 			if(results.success === 1){
+				alert('删除成功！');
+
 				if(tr.length > 0){
 					tr.remove();
 				}
 			}
 		})
-	})
+	});
 
 	$('#douban').blur(function(){
 		var douban = $(this);

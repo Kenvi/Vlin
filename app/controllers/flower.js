@@ -106,17 +106,16 @@ exports.save = function(req,res){
 	if(id){//该产品存在，变为修改更新
 
 		//清除原来的类别
-		Catetory
-			.find({flowers:id})
-			.exec(function(err,cat){
-				console.log(cat[0].flowers);
-				cat[0].flowers.remove(id);
-				console.log(id);
-				cat[0].save(function(err,cat){
-					if(err){console.log(err);}
-				})
-			});
-
+		//Catetory
+		//	.find({flowers:id})
+		//	.exec(function(err,cat){
+		//		console.log(cat[0].flowers);
+		//		cat[0].flowers.remove(id);
+		//		console.log(id);
+		//		cat[0].save(function(err,cat){
+		//			if(err){console.log(err);}
+		//		})
+		//	});
 
 		//保存新数据
 		Flower.findById(id,function(err,flower){
@@ -129,23 +128,14 @@ exports.save = function(req,res){
 					console.log(err);
 				}
 
-				Catetory.findById(flower.catetory,function(err,catetory){//保存新类别
-					if(err){
-						console.log(err);
-					}
-					catetory.flowers.push(id);
-					catetory.save(function(err,catetory){
-						res.redirect('/flower/' + flower._id);
-
-					})
-				})
+				res.redirect('/flower/' + flower._id);
 
 			})
 
 		})
 
 
-	}else{//产品不存在，新建产品
+	}else{//产品不存在，新建产品//
 		_flower = new Flower(flowerObj);
 
 		var catetoryId = flowerObj.catetory;//类别id
@@ -156,8 +146,10 @@ exports.save = function(req,res){
 			if(err){
 				console.log(err);
 			}
+
 			if(catetoryId){//类别存在，添加产品进入该类
 				Catetory.findById(catetoryId,function(err,catetory){
+					console.log(flower);
 					catetory.flowers.push(flower._id);
 					catetory.save(function(err,catetory){
 						res.redirect('/flower/' + flower._id);
@@ -167,7 +159,7 @@ exports.save = function(req,res){
 				var catetory = new Catetory({
 					name:catetoryName,
 					flowers:[flower._id]
-				})
+				});
 				catetory.save(function(err,catetory){
 					flower.catetory = catetory._id;
 					flower.save(function(err,flower){
