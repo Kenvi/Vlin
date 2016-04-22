@@ -4,10 +4,6 @@ block content
     .container
         .row
             form.form-horizontal(method="post", action="/admin/flower" enctype="multipart/form-data")
-                .form-group
-                    label.col-sm-2.control-label(for="inputTitle") 豆瓣同步
-                    .col-sm-10
-                        input#douban.form-control(type="text")
                 if flower._id
                     input(type="hidden",name="flower[_id]",value=flower._id)
                 .form-group
