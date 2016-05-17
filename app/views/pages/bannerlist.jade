@@ -1,0 +1,25 @@
+//
+   Created by Kenvi on 2016/5/16.
+
+extends ../layout
+block content
+   .container
+      .row
+         table.table.table-hover.table-bordered
+            thead
+               tr
+                  th banner名称
+                  th 路径
+                  th 录入时间
+                  th 更新
+                  th 删除
+               tbody
+                  each item in banners
+                     tr(class="item-id-#{item._id}")
+                        td #{item.name}
+                        td #{item.banner}
+                        td #{moment(item.meta.updateAt).format('MM/DD/YYYY')}
+                        td: a(target="_blank",href="../admin/update/#{item._id}") 修改
+                        td
+                           button.btn.btn-danger.del(type="button",data-id="#{item._id}",data-class="banner")  删除
+   script(src="/js/admin.js")

@@ -1,5 +1,6 @@
 const Flower = require('../models/flower');
-const Catetory = require('../models/catetory')
+const Catetory = require('../models/catetory');
+const Banner = require('../models/banner');
 
 
 //index page
@@ -11,13 +12,21 @@ exports.index =  function(req,res){
 			if(err){
 				console.log(err);
 			}
-			res.render('index', {
-				title:'首页',
-				catetories:catetories
+
+			Banner.find({},function(err,banners){
+				if(err){
+					console.log(err);
+				}
+				res.render('index', {
+					title:'首页',
+					catetories:catetories,
+					banners:banners
+				})
 			})
+
 		})
 	
-}
+};
 
 exports.search =  function(req,res){
 	var catId = req.query.cat;
@@ -70,4 +79,5 @@ exports.search =  function(req,res){
 	}
 
 
-}
+};
+

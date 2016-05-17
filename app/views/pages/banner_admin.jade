@@ -1,0 +1,19 @@
+//
+   Created by Kenvi on 2016/5/16.
+
+extends ../layout
+block content
+   .container
+      .row
+         form.form-horizontal(method="post", action="/admin/banner",enctype="multipart/form-data")
+            .form-group
+               label.col-sm-2.control-label(for="inputTitle") banner名称
+               .col-sm-10
+                  input#inputTitle.form-control(type="text",name="banner[name]",value=banner.name)
+            .form-group
+               label.col-sm-2.control-label(for="uploadBanner") banner上传
+               .col-sm-10
+                  input#uploadBanner(type="file",name="uploadBanner")
+            .form-group
+               .col-sm-offset-2.col-sm-10
+               button.btn.btn-default(type="submit")  录入

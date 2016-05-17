@@ -3,6 +3,7 @@ const Index = require('../app/controllers/index');
 const User = require('../app/controllers/user');
 const Comment = require('../app/controllers/comment');
 const Catetory = require('../app/controllers/catetory');
+const Banner = require('../app/controllers/banner');
 
 module.exports = function(app){
 	
@@ -45,5 +46,11 @@ module.exports = function(app){
 
 	//Results
 	app.get('/results',Index.search);
+
+	//Banner
+	app.get('/admin/banner/new',User.signinRequest,User.adminRequest,Banner.new);
+	app.post('/admin/banner',User.signinRequest,User.adminRequest,Banner.saveBanner,Banner.save);
+	app.get('/admin/banner/list',User.signinRequest,User.adminRequest,Banner.list);
+	app.delete('/admin/banner/list',User.signinRequest,User.adminRequest, Banner.del);
 
 }
