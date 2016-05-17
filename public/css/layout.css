@@ -5,4 +5,6 @@
 ul.nav.nav-pills li a{margin-top: 25px;}
 .mt20 .form-control{height: 38px;border: 2px solid #95c72a;border-radius: 20px;}
 .mt20 .btn{height: 38px;border: 2px solid #95c72a;border-radius: 20px;background:#95c72a;top: 0;color: #fff;}
+.banner a.carousel-control{z-index: 100;}
 .banner a.carousel-control span{position: absolute;top:50%;margin: -50px 0 0 -50px;}
+#anmi-canvas{top: 0;position: absolute;}
