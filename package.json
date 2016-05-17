@@ -22,6 +22,7 @@
     "express-session": "^1.13.0",
     "grunt": "^0.4.5",
     "grunt-concurrent": "^2.2.1",
+    "grunt-contrib-less": "^1.3.0",
     "grunt-contrib-nodemon": "^0.5.2",
     "grunt-contrib-watch": "^1.0.0",
     "grunt-nodemon": "^0.4.1",

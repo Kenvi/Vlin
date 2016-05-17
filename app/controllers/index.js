@@ -18,7 +18,7 @@ exports.index =  function(req,res){
 					console.log(err);
 				}
 				res.render('index', {
-					title:'首页',
+					title:'广州微林园林绿化工程有限公司-首页',
 					catetories:catetories,
 					banners:banners
 				})
