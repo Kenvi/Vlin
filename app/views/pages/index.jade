@@ -26,7 +26,133 @@ block content
             a.right.carousel-control(href="#myCarousel",data-slide="next")
                 span.glyphicon.glyphicon-menu-right.fs-10(aria-hidden="true")
             canvas#anmi-canvas
-    .container
+    .about-us.container.mt100
+        .info-title
+            .title-content.text-center.p-r
+                h1 公司简介
+                span COMPANY INFOMATION
+        .info-content.mt40
+            p &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;广州市微林园林绿化工程有限公司是一家以花卉租售，花木护养，花篮，婚车装饰，园林绿化和写字楼绿化保洁等业务为主的公司，由两位广州本土下岗人士创立，先后由“广州市越秀区妙强花卉店”（2010年）更名为“广州市荔湾区微林花卉行”（2012年）到2015年正式注册为“广州市微林园林绿化工程有限公司”。
+            p &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;五年的经验令我们不断对自己的服务质量进行提高，并由此推出“写字楼绿化保洁”一条龙特色服务，五年来的进步令我们更加坚持“实事求是”的工作理念，努力为客户提供最优质的服务。
+        .row.mt40
+            img(src="/images/about-img.png" alt="创意，多样，健康")
+            .col-md-4.pl25 CREATIVE
+            .col-md-4.text-center CREATIVE
+            .col-md-4.text-right.pr20 CREATIVE
+    .news.mt100.pt60
+        .container
+            .info-title
+                .title-content.text-center.p-r
+                    h1 新闻动态
+                    span NEWS
+            .row.mt40
+                .col-md-7
+                    img(src="/upload/news-img_1.png",alt="")
+                .col-md-5.mt10
+                    a.d-b.news-content(href="##")
+                        h4 2015城市园林绿化企业50强出炉
+                        span 2015-12-25
+                        p.mt10 由《中国花卉报》联合中国建筑业协会古建筑与园林施工分会、中国风景园林学会园林工程分会开展的“全国2015年度城市园林绿化企业50强”评选活动，于4月16日结束，共有62家企业上榜，14家单位净利润超亿元。
+                    a.d-b.news-content(href="##")
+                        h4 2015城市园林绿化企业50强出炉
+                        span 2015-12-25
+                        p.mt10 由《中国花卉报》联合中国建筑业协会古建筑与园林施工分会、中国风景园林学会园林工程分会开展的“全国2015年度城市园林绿化企业50强”评选活动，于4月16日结束，共有62家企业上榜，14家单位净利润超亿元。
+                    a.d-b.news-content(href="##")
+                        h4 2015城市园林绿化企业50强出炉
+                        span 2015-12-25
+                        p.mt10 由《中国花卉报》联合中国建筑业协会古建筑与园林施工分会、中国风景园林学会园林工程分会开展的“全国2015年度城市园林绿化企业50强”评选活动，于4月16日结束，共有62家企业上榜，14家单位净利润超亿元。
+    .container.best-pro.mt100
+        .info-title
+            .title-content.text-center.p-r
+                h1 首推产品
+                span SELECTED PRODUCTS
+        .row.mt40
+            #bestPro.carousel.slide(data-ride="carousel")
+                ol.carousel-indicators
+                    li.active(data-target="#bestPro",data-slide-to="0")
+                    li(data-target="#bestPro",data-slide-to="1")
+                    li(data-target="#bestPro",data-slide-to="2")
+                .carousel-inner.text-center
+                    .item.active
+                        .col-md-3
+                            img(src="/upload/bestpro_1.png",alt="")
+                        .col-md-3
+                            img(src="/upload/bestpro_2.png",alt="")
+                        .col-md-3
+                            img(src="/upload/bestpro_3.png",alt="")
+                        .col-md-3
+                            img(src="/upload/bestpro_4.png",alt="")
+                    .item
+                        .col-md-3
+                            img(src="/upload/bestpro_1.png",alt="")
+                        .col-md-3
+                            img(src="/upload/bestpro_2.png",alt="")
+                        .col-md-3
+                            img(src="/upload/bestpro_3.png",alt="")
+                        .col-md-3
+                            img(src="/upload/bestpro_4.png",alt="")
+                    .item
+                        .col-md-3
+                            img(src="/upload/bestpro_1.png",alt="")
+                        .col-md-3
+                            img(src="/upload/bestpro_2.png",alt="")
+                        .col-md-3
+                            img(src="/upload/bestpro_3.png",alt="")
+                        .col-md-3
+                            img(src="/upload/bestpro_4.png",alt="")
+    .contact.mt160.pt10.pb50
+        #baiduMap(style="width:100%;height:500px;")
+        .container.mt40
+            .info-title
+                .title-content.text-center.p-r
+                    h1 联系我们
+                    span CONTACT
+            .row.mt40
+                .col-md-4
+                    .contact-content.pull-left
+                        p.p-r.bg-f.pt30.text-center
+                            span 地址/ADDRESS
+                            br
+                            span 广州市天河区棠东毓桂大街
+                            br
+                            span 1号1,2楼110房
+                            br
+                            span.glyphicon.glyphicon-map-marker.fs-2
+                .col-md-4
+                    .contact-content
+                        p.p-r.bg-f.pt30.text-center
+                            span 电话/PHONE
+                            br
+                            span 135-0000-9539
+                            br
+                            span 135-5603-8651
+                            br
+                            span.glyphicon.glyphicon-phone.fs-2
+                .col-md-4
+                    .contact-content.pull-right
+                        p.p-r.bg-f.pt30.text-center
+                            span 邮箱/EMAIL
+                            br
+                            span weilinhh@163.com
+                            br
+                            br
+                            span.glyphicon.glyphicon-envelope.fs-2
+            .row.mt40
+                .col-md-6.pr50.text-right
+                    img(src="../images/erweicode.png",width="140",alt="")
+                    br
+                    span.fs-2 关注我们的微信
+                .col-md-6.pl50.text-left
+                    h3 经营范围
+                    span.fs-2 庭院绿化 园艺工程
+                    br
+                    span.fs-2 开业花篮 花车花束
+                    br
+                    span.fs-2 花木销售 植物租赁
+                    br
+                    span.fs-2 绿化养护 办公室清理
+
+    //-.container.mt100
         .row
             each cat in catetories
                 .panel.panel-default
@@ -46,8 +172,8 @@ block content
                                         .caption
                                             h3 #{item.title}
                                             p: a.btn.btn-primary(href="/flower/#{item._id}",role="button") 详情
+    script(src="https://api.map.baidu.com/getscript?v=1.4")
     script(src="/js/TweenLite.min.js")
     script(src="/js/EasePack.min.js")
     script(src="/js/jsanim.js")
-    scrpit
-        | $('.carousel').carousel();
+    script(src="/js/index.js")

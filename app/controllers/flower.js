@@ -76,6 +76,8 @@ exports.savePoster = function(req,res,next){
 	var filePath = posterData.path;
 	var originalFilename = posterData.originalFilename;
 
+	console.log('保存 savePoster：    '+posterData + '     '+filePath+'     '+originalFilename);
+
 	if(originalFilename){
 		fs.readFile(filePath,function(err,data){
 			var timestamp = Date.now();
@@ -91,7 +93,7 @@ exports.savePoster = function(req,res,next){
 	}else{
 		next();
 	}
-}
+};
 
 //admin post flower
 exports.save = function(req,res){

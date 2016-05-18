@@ -1,20 +1,31 @@
 
 /*margin*/
 .ml30{margin-left: 30px;}
+.mt10{margin-top: 10px;}
 .mt20{margin-top: 20px;}
 .mt40{margin-top: 40px;}
+.mt100{margin-top: 100px;}
+.mt160{margin-top: 160px;}
 
 /*padding*/
 .pt10{padding-top: 10px;}
 .pt15{padding-top: 15px;}
 .pt20{padding-top: 20px;}
+.pt30{padding-top: 30px;}
+.pt60{padding-top: 60px;}
 .pb10{padding-bottom: 10px;}
 .pb15{padding-bottom: 15px;}
 .pb20{padding-bottom: 20px;}
+.pb50{padding-bottom: 50px;}
+.pb100{padding-bottom: 100px;}
 .pr20{padding-right: 20px;}
+.pr50{padding-right: 50px;}
+.pl25{padding-left: 25px;}
+.pl50{padding-left: 50px;}
 
 /*font-size*/
 .fs-2{font-size: 2rem;}
+.fs-3{font-size: 3rem;}
 .fs-4{font-size: 4rem;}
 .fs-5{font-size: 5rem;}
 .fs-10{font-size: 10rem;}
@@ -22,3 +33,15 @@
 /*display*/
 .d-b{display: block;}
 .d-ib{display: inline-block;}
+
+/*position*/
+.p-a{position: absolute;}
+.p-r{position: relative;}
+.p-f{position: fixed;}
+
+/*background-color*/
+.bg-f{background: #fff;}
+.bg-green{background: #649332;}
+
+/*color*/
+.c-f{color: #fff;}

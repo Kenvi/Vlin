@@ -1,10 +1,34 @@
 
-/*index*/
+/*header*/
 .header-wrap{height: 110px;background: url("../images/header_bottom.png") center bottom repeat-x;}
 .logo a{width: 176px;height: 76px;background: url("../images/logo.png") center top no-repeat;}
 ul.nav.nav-pills li a{margin-top: 25px;}
 .mt20 .form-control{height: 38px;border: 2px solid #95c72a;border-radius: 20px;}
 .mt20 .btn{height: 38px;border: 2px solid #95c72a;border-radius: 20px;background:#95c72a;top: 0;color: #fff;}
+
+/*footer*/
+.footer-wrap{height: 50px;line-height: 50px;}
+.footer-wrap a{color: #fff;}
+
+/*index*/
 .banner a.carousel-control{z-index: 100;}
 .banner a.carousel-control span{position: absolute;top:50%;margin: -50px 0 0 -50px;}
 #anmi-canvas{top: 0;position: absolute;}
+.info-title{width: 230px;height: 116px;border: 1px solid #95c72a;margin: 0 auto;color: #666;}
+.title-content{width: 250px;height: 64px;top:5px;left:-10px; background:url("../images/title-content_bg.png") center top no-repeat;}
+.title-content h1{font-size: 30px;padding-top: 5px;margin-bottom: 0;}
+.about-us .row .col-md-4{color: #95c72a;}
+.best-pro .carousel-indicators{bottom: -60px;}
+.best-pro .carousel-indicators li{border: 1px solid #666;}
+.best-pro .carousel-indicators li.active{background: #666;}
+.news{height: 700px;background: url("../images/index-news_bg.png") center top no-repeat;}
+.news .info-title{border-color:#fff;color: #fff; }
+.news .title-content{background: url("../images/title-content_green-bg.png") center top no-repeat;}
+.news a.news-content{color: #fff;border-bottom: 1px dashed #fff;}
+.news a.news-content h4{margin-bottom: 0;}
+/*.contact{min-height: 136px;background: url("../images/index-contact_bg.png") center top no-repeat;}*/
+.contact-content{border: 1px solid #95c72a;width: 254px;height: 150px;margin: 0 auto;}
+.contact-content p{line-height: 190%;width: 180px;margin: 0 auto;top: -5px;}
+.contact-content p .glyphicon{border: 2px solid #333;border-radius: 100%;padding: 2px;}
+.contact .col-md-6.pr50.text-right{border-right: 1px solid #95c72a;}
+.contact .col-md-6.pl50.text-left h3{margin-top: 10px;}
