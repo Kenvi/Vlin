@@ -1,7 +1,7 @@
 extends ../layout
 
 block content
-    .container
+    .container.mt40
         .row
             form.form-horizontal(method="post", action="/admin/flower" enctype="multipart/form-data")
                 if flower._id
@@ -11,7 +11,7 @@ block content
                     .col-sm-10
                         input#inputCatetory.form-control(type="text",name="flower[catetoryName]",value=flower.catetoryName)
                 .form-group
-                    label.col-sm-2.control-label(for="inputTitle") 分类选择
+                    label.col-sm-2.control-label(for="") 分类选择
                     each cat in catetories
                         label.radio-inline
                             if flower._id
@@ -42,7 +42,7 @@ block content
                 .form-group
                     label.col-sm-2.control-label(for="inputPoster") 图片上传
                     .col-sm-10
-                        input#uploadPoster(type="file",name="uploadPoster")
+                        input#uploadPoster(type="file",multiple,name="uploadPoster")
                 .form-group
                     label.col-sm-2.control-label(for="inputPrice") 价格
                     .col-sm-10

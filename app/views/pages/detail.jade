@@ -1,10 +1,11 @@
 extends ../layout
 
 block content
-    .container
+    .container.mt40
         .row
             .col-md-7
-                img(src="/upload/#{flower.poster}", width="720", align="center")
+                each poster in flower.poster
+                    img(src="/upload/#{poster}", width="720", align="center")
                 //-.panel.panel-defatul
                     .panel-heading
                         h3 评论区

@@ -138,18 +138,23 @@ exports.save = function(req,res){
 	}else{//产品不存在，新建产品//
 		_flower = new Flower(flowerObj);
 
+
 		var catetoryId = flowerObj.catetory;//类别id
 		var catetoryName =  flowerObj.catetoryName;//类别名
-		//console.log(movieObj);
 
 		_flower.save(function(err,flower){
 			if(err){
 				console.log(err);
 			}
+			console.log('_flower.save的时候：    ' + flower);
 
 			if(catetoryId){//类别存在，添加产品进入该类
+				_flower.catetory = catetoryId;
 				Catetory.findById(catetoryId,function(err,catetory){
-					console.log(flower);
+					if(err){
+						console.log(err);
+					}
+					console.log('搜索catetory结果：    ' + catetory)
 					catetory.flowers.push(flower._id);
 					catetory.save(function(err,catetory){
 						res.redirect('/flower/' + flower._id);

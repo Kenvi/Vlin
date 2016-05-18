@@ -9,15 +9,14 @@ var FlowerSchema  = new Schema({
 	culture : String,
 	conservation : String,
 	price : String,
-	poster : String,
+	poster : [{type:String}],
 	pv : {
 		type : Number,
 		default : 0
 	},
 	catetory : {
 		type : ObjectId,
-		ref : 'Catetory',
-		unique:true
+		ref : 'Catetory'
 	},
 	meta : {
 		createAt : {
