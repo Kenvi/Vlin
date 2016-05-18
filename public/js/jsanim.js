@@ -9,17 +9,17 @@
 		    addListeners();
 
 		    function initHeader() {
-		        width = window.innerWidth;
-		        height = 415;
+		        width = document.body.clientWidth;
+		        height = 630;
 		        target = {x: width/2, y: height/2};
 
 		        largeHeader = document.getElementById('large-header');
 		        //console.log("test",document.getElementById('large-header'));
-		        largeHeader.style.height = 500+'px';
+		        largeHeader.style.height = 630+'px';
 
 		        canvas = document.getElementById('anmi-canvas');
 		        canvas.width = width;
-		        canvas.height = 415;
+		        canvas.height = 630;
 		        ctx = canvas.getContext('2d');
 
 		        // create points
@@ -99,8 +99,8 @@
 		    }
 
 		    function resize() {
-		        width = window.innerWidth;
-		        height = 500;
+		        width = document.body.clientWidth;
+		        height = 630;
 		        largeHeader.style.height = height+'px';
 		        canvas.width = width;
 		        canvas.height = height;

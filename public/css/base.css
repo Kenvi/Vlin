@@ -20,8 +20,12 @@
 .pb100{padding-bottom: 100px;}
 .pr20{padding-right: 20px;}
 .pr50{padding-right: 50px;}
+.pr70{padding-right: 70px;}
+.pr100{padding-right: 100px;}
 .pl25{padding-left: 25px;}
 .pl50{padding-left: 50px;}
+.pl70{padding-left: 70px;}
+.pl100{padding-left: 100px;}
 
 /*font-size*/
 .fs-2{font-size: 2rem;}

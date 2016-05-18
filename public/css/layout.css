@@ -30,5 +30,5 @@ ul.nav.nav-pills li a{margin-top: 25px;}
 .contact-content{border: 1px solid #95c72a;width: 254px;height: 150px;margin: 0 auto;}
 .contact-content p{line-height: 190%;width: 180px;margin: 0 auto;top: -5px;}
 .contact-content p .glyphicon{border: 2px solid #333;border-radius: 100%;padding: 2px;}
-.contact .col-md-6.pr50.text-right{border-right: 1px solid #95c72a;}
-.contact .col-md-6.pl50.text-left h3{margin-top: 10px;}
+.contact .col-md-6.pl70.text-left{border-left: 1px solid #95c72a;}
+.contact .col-md-6.pl70.text-left h3{margin-top: 10px;}
