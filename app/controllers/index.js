@@ -50,7 +50,7 @@ exports.search =  function(req,res){
 				var flowers = catetory.flowers || [];
 				var results = flowers.slice(index,index + count);
 				res.render('results', {
-					title:'结果列表',
+					title:'广州微林园林绿化工程有限公司-结果列表',
 					keyword:catetory.name,
 					currentPage:(page+1),
 					totalPage:Math.ceil(flowers.length/count),
@@ -68,7 +68,7 @@ exports.search =  function(req,res){
 
 				var results = flowers.slice(index,index + count);
 				res.render('results', {
-					title:'结果列表',
+					title:'广州微林园林绿化工程有限公司-结果列表',
 					keyword:q,
 					currentPage:(page+1),
 					totalPage:Math.ceil(flowers.length/count),

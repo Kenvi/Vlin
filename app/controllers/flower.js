@@ -45,7 +45,7 @@ exports.new = function(req,res){
 	Catetory.find({},function(err,catetories){
 		res.render('admin', {
 
-			title:'后台录入页',
+			title:'广州微林园林绿化工程有限公司-后台录入页',
 			catetories:catetories,
 			flower:{}
 		})
@@ -61,38 +61,72 @@ exports.update = function(req,res){
 		Flower.findById(id,function(err,flower){
 			Catetory.find({},function(err,catetories){
 				res.render('admin',{
-					title:'后台更新页',
+					title:'广州微林园林绿化工程有限公司-后台更新页',
 					flower:flower,
 					catetories:catetories
 				})
 			})
 		})
 	}
-}
+};
 
 //admin	poster
 exports.savePoster = function(req,res,next){
 	var posterData = req.files.uploadPoster;
-	var filePath = posterData.path;
-	var originalFilename = posterData.originalFilename;
 
-	console.log('保存 savePoster：    '+posterData + '     '+filePath+'     '+originalFilename);
+	if(posterData.length > 1){//上传一张以上图片
+		var j =0;
+		req.poster = [];
 
-	if(originalFilename){
-		fs.readFile(filePath,function(err,data){
-			var timestamp = Date.now();
-			var type = posterData.type.split('/')[1];
-			var poster = timestamp+'.'+type;
-			var newPath = path.join(__dirname,'../../','public/upload/'+ poster);
+		for(var i=0;i<posterData.length;i++){
+			var FilePath = posterData[i].path;
+			var OriginalFilename = posterData[i].originalFilename;
 
-			fs.writeFile(newPath,data,function(err){
-				req.poster = poster;
+			if(OriginalFilename){
+				fs.readFile(FilePath,function(err,data){//读取文件
+					var timestamp = Date.now();
+					var type = OriginalFilename.split('.')[1];
+					var poster = timestamp+'.'+type;
+					var newPath = path.join(__dirname,'../../','public/upload/'+ poster);
+
+					fs.writeFile(newPath,data,function(err){//文件写入upload
+						j++;
+						req.poster.push(poster);
+
+						if(j == posterData.length){
+							next();
+						}
+
+					})
+				})
+			}else{
 				next();
-			})
-		})
+			}
+		}
+
 	}else{
-		next();
+		var filePath = posterData.path;
+		var originalFilename = posterData.originalFilename;
+
+		if(originalFilename){
+			fs.readFile(filePath,function(err,data){
+				var timestamp = Date.now();
+				var type = posterData.type.split('/')[1];
+				var poster = timestamp+'.'+type;
+				var newPath = path.join(__dirname,'../../','public/upload/'+ poster);
+
+				fs.writeFile(newPath,data,function(err){
+					req.poster = poster;
+					next();
+				})
+			})
+		}else{
+			next();
+		}
 	}
+
+
+
 };
 
 //admin post flower
@@ -148,15 +182,13 @@ exports.save = function(req,res){
 			if(err){
 				console.log(err);
 			}
-			console.log('_flower.save的时候：    ' + flower);
-
 			if(catetoryId){//类别存在，添加产品进入该类
 				_flower.catetory = catetoryId;
 				Catetory.findById(catetoryId,function(err,catetory){
 					if(err){
 						console.log(err);
 					}
-					console.log('搜索catetory结果：    ' + catetory)
+
 					catetory.flowers.push(flower._id);
 					catetory.save(function(err,catetory){
 						res.redirect('/flower/' + flower._id);
@@ -179,7 +211,7 @@ exports.save = function(req,res){
 
 		})
 	}
-}
+};
 
 //list page
 exports.list = function(req,res){
@@ -188,7 +220,7 @@ exports.list = function(req,res){
 			console.log(err);
 		}
 		res.render('list', {
-			title:'列表页',
+			title:'广州微林园林绿化工程有限公司-产品列表',
 			flowers:flowers
 		})
 	})

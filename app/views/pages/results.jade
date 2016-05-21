@@ -14,7 +14,7 @@ block content
                      .col-md-2
                         .thumbnail
                            a(href="/flower/#{item._id}")
-                              img(src="/upload/#{item.poster}",alt="#{item.title}")
+                              img(src="/upload/#{item.poster[0]}",alt="#{item.title}")
                            .caption
                               h3 #{item.title}
                               p: a.btn.btn-primary(href="/flower/#{item._id}",role="button") 详情
