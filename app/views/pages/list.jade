@@ -7,8 +7,8 @@ block content
                 thead
                     tr
                         th 产品名称
-                        th 地理分布
-                        th 植物文化
+                        //-th 地理分布
+                        //-th 植物文化
                         th 应用场景
                         th 录入时间
                         th 浏览量
@@ -20,8 +20,8 @@ block content
                         each item in flowers
                             tr(class="item-id-#{item._id}")
                                 td #{item.title}
-                                td #{item.location}
-                                td #{item.culture}
+                                //-td #{item.location}
+                                //-td #{item.culture}
                                 td #{item.scenarios}
                                 td #{moment(item.meta.updateAt).format('MM/DD/YYYY')}
                                 td #{item.pv}
