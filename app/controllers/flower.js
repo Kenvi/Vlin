@@ -30,6 +30,7 @@ exports.detail = function(req,res){
 					}
 					res.render('detail', {
 						title:flower.title,
+						bodytype:'pro-list',
 						flower:flower,
 						comments:comments
 					})
@@ -219,7 +220,7 @@ exports.list = function(req,res){
 		if(err){
 			console.log(err);
 		}
-		res.render('list', {
+		res.render('flowerlist', {
 			title:'广州微林园林绿化工程有限公司-产品列表',
 			flowers:flowers
 		})

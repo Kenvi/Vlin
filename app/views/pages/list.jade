@@ -1,33 +1,24 @@
 extends ../layout
 
+
 block content
-    .container.mt40
-        .row
-            table.table.table-hover.table-bordered
-                thead
-                    tr
-                        th 产品名称
-                        //-th 地理分布
-                        //-th 植物文化
-                        th 应用场景
-                        th 录入时间
-                        th 浏览量
-                        th 类别
-                        th 查看
-                        th 更新
-                        th 删除
-                    tbody
-                        each item in flowers
-                            tr(class="item-id-#{item._id}")
-                                td #{item.title}
-                                //-td #{item.location}
-                                //-td #{item.culture}
-                                td #{item.scenarios}
-                                td #{moment(item.meta.updateAt).format('MM/DD/YYYY')}
-                                td #{item.pv}
-                                td #{item.catetory}
-                                td: a(target="_blank",href="/flower/#{item._id}") 查看
-                                td: a(target="_blank",href="/admin/flower/update/#{item._id}") 修改
-                                td
-                                    button.btn.btn-danger.del(type="button",data-id="#{item._id}",data-class="flower")  删除
-    script(src="/js/admin.js")
+   .container.mt100
+      .row
+         each cat in catetories
+            .panel.panel-default
+               .panel-heading
+                  h3
+                     a(href='/results?cat=#{cat._id}&p=0') #{cat.name}
+               .panel-body
+                  if cat.flowers && cat.flowers.length > 0
+                     each item in cat.flowers
+                        .col-md-2
+                           .thumbnail
+                              a(href="/flower/#{item._id}")
+                                 if item.poster.indexOf('http') > -1
+                                    img(src="#{item.poster[0]}",alt="#{item.title}")
+                                 else
+                                    img(src="/upload/#{item.poster[0]}",alt="#{item.title}",width="150")
+                              .caption
+                                 h3 #{item.title}
+                                 p: a.btn.btn-primary(href="/flower/#{item._id}",role="button") 详情

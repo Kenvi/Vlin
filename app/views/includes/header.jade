@@ -7,10 +7,10 @@
                         a.d-b(href="/")
                 .col-md-6
                     ul.nav.nav-pills
-                        li.active
-                            a(href="##") 首页
                         li
-                            a.ml30(href="##") 产品列表
+                            a(href="/") 首页
+                        li
+                            a.ml30(href="/pro-list") 产品列表
                         li
                             a.ml30(href="##") 关于我们
                         li
@@ -35,7 +35,7 @@
                 a.navbar-link(href="#",data-toggle="modal",data-target="#signupModal")  注册
                 span &nbsp;|&nbsp;
                 a.navbar-link(href="#",data-toggle="modal",data-target="#signinModal")  登陆
-#signupModal.modal.fade
+//-#signupModal.modal.fade
     .modal-dialog
         .modal-content
             form(method="POST",action="/user/signup")
@@ -50,7 +50,7 @@
                 .modal-footer
                     button.btn.btn-default(type="button",data-dismiss="modal")  关闭
                     button.btn.btn-success(type="submit")  提交
-#signinModal.modal.fade
+//-#signinModal.modal.fade
     .modal-dialog
         .modal-content
             form(method="POST",action="/user/signin")

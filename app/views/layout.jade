@@ -4,7 +4,7 @@ html
         meta(charset="utf-8")
         title #{title}
         include ./includes/head
-    body
+    body(class="#{bodytype}")
         include ./includes/header
         block content
         include ./includes/footer
