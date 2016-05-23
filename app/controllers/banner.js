@@ -10,7 +10,7 @@ const path = require('path');
 //admin new page
 exports.new = function(req,res){
     res.render('banner_admin', {
-        title:'banner录入',
+        title:'广州微林园林绿化工程有限公司-banner录入',
         banner:{}
     })
 };
@@ -63,7 +63,7 @@ exports.list = function(req,res){
             console.log(err);
         }
         res.render('bannerlist', {
-            title:'banner列表页',
+            title:'广州微林园林绿化工程有限公司-banner列表页',
             banners:banners
         })
     })

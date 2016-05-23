@@ -4,7 +4,7 @@ const User = require('../models/user');
 //signup
 exports.showSignup = function(req,res){
 	res.render('signup', {
-		title:'注册'
+		title:'广州微林园林绿化工程有限公司-注册'
 	})
 }
 
@@ -34,7 +34,7 @@ exports.signup = function(req,res){
 //signin
 exports.showSignin = function(req,res){
 	res.render('signin', {
-		title:'登陆',
+		title:'广州微林园林绿化工程有限公司-登陆'
 	})
 }
 
@@ -79,7 +79,7 @@ exports.list =function(req,res){
 			console.log(err);
 		}
 		res.render('userlist', {
-			title:'用户列表页',
+			title:'广州微林园林绿化工程有限公司-用户列表页',
 			users:users
 		})
 	})

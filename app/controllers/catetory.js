@@ -9,7 +9,7 @@ const _ = require('underscore');
 //admin new page
 exports.new = function(req,res){
     res.render('catetory_admin', {
-        title:'产品分类录入',
+        title:'广州微林园林绿化工程有限公司-产品分类录入',
         catetory:{}
     })
 }
@@ -43,7 +43,7 @@ exports.list =function(req,res){
             .populate('flowers','title')
             .exec(function(err,flower){
                 res.render('catetorylist', {
-                    title:'产品分类列表',
+                    title:'广州微林园林绿化工程有限公司-产品分类列表',
                     catetories:catetories,
                     flower: flower
                 })
