@@ -1,0 +1,77 @@
+extends ../layout
+
+block content
+   img(src="/images/about-us-bannerbg.jpg",align="center",width="100%")
+   #introduction.container.mt100
+      .info-title
+         .title-content.text-center.p-r
+            h1 关于我们
+            span ABOUT US
+      .introduction.row.mt40.fs18
+         .col-md-6.pt10
+            p &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;广州市微林园林绿化工程有限公司是一家以花卉租售，花木护养，花篮，婚车装饰，园林绿化和写字楼绿化保洁等业务为主的公司，由两位广州本土下岗人士创立，先后由“广州市越秀区妙强花卉店”（2010年）更名为“广州市荔湾区微林花卉行”（2012年）到2015年正式注册为“广州市微林园林绿化工程有限公司”。
+            p &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;五年的经验令我们不断对自己的服务质量进行提高，并由此推出“写字楼绿化保洁”一条龙特色服务，五年来的进步令我们更加坚持“实事求是”的工作理念，努力为客户提供最优质的服务。
+            p &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;更多内容陆续完善中，敬请期待。
+         .col-md-6
+            img(src="/images/about-us_company.jpg",width="100%")
+   #cooperation.container.mt100
+      .info-title
+         .title-content.text-center.p-r
+            h1 合作案例
+            span COOPERATION CASE
+      .cooperation.mt40.fs18
+         .row.pb20
+            .col-md-2
+               img(src="/images/about-us_nike.jpg",width="100%",alt="nike")
+            .col-md-10
+               p &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;NIKE是全球著名的体育运动品牌，英文原意指希腊胜利女神，中文译为耐克。
+               p &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;公司总部位于美国俄勒冈州Beaverton。公司生产的体育用品包罗万象，例如服装，鞋类，运动器材等。
+               p &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;耐克商标图案是个小钩子。耐克一直将激励全世界的每一位运动员并为其献上最好的产品视为光荣的任务。耐克首创的气垫技术给体育界带来了一场革命。运用这项技术制造出的运动鞋可以很好地保护运动员的膝盖.在其在作剧烈运动落地时减小对膝盖的影响。
+         .row
+            .col-md-2
+               img(src="/images/about-us_gzbank.jpg",width="100%",alt="广州银行")
+            .col-md-10.pt20
+               p &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;广州银行是由广州市政府控股的股份制商业银行，其前身为在46家城市信用合作社的基础上组建的广州城市合作银行，成立于1996年9月17日。
+               p &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1998年7月，更名为广州市商业银行股份有限公司。
+               p &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2009年9月，获准更名为广州银行股份有限公司。
+   #contactUs.container.mt100.pb100.fs14
+      .info-title
+         .title-content.text-center.p-r
+            h1 联系我们
+            span CONTACT US
+      #baiduMap.mt40(style="width:100%;height:400px;")
+      .row.mt40
+         .col-md-3
+            .contact-content.pull-left
+               p.p-r.bg-f.pt30.text-center
+                  span 地址/ADDRESS
+                  br
+                  span 广州市天河区棠东毓桂大街
+                  br
+                  span 1号1,2楼110房
+                  br
+                  span.glyphicon.glyphicon-map-marker.fs-2
+         .col-md-3
+            .contact-content
+               p.p-r.bg-f.pt30.text-center
+                  span 电话/PHONE
+                  br
+                  span 135-0000-9539
+                  br
+                  span 135-5603-8651
+                  br
+                  span.glyphicon.glyphicon-phone.fs-2
+         .col-md-3
+            .contact-content.pull-right
+               p.p-r.bg-f.pt30.text-center
+                  span 邮箱/EMAIL
+                  br
+                  span weilinhh@163.com
+                  br
+                  br
+                  span.glyphicon.glyphicon-envelope.fs-2
+         .col-md-3
+            .weixin-code.pull-right
+               img.pull-right(src="/images/erweicode.png",width="150px;")
+   script(src="https://api.map.baidu.com/getscript?v=1.4")
+   script(src="/js/about.js")

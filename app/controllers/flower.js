@@ -29,7 +29,7 @@ exports.detail = function(req,res){
 						console.log(err);
 					}
 					res.render('detail', {
-						title:flower.title,
+						title:'广州微林园林绿化工程有限公司-产品详情_'+flower.title,
 						bodytype:'pro-list',
 						flower:flower,
 						comments:comments
