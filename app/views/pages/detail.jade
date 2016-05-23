@@ -1,7 +1,7 @@
 extends ../layout
 
 block content
-    .detail.container.mt40.pb50
+    .detail.container.mt40
         .J_Poster.poster-main(data-setting='{"width":1170,"height":653,"posterWidth":980,"posterHeight":653,"scale":0.8,"autoPlay":true,"delay":2000,"speed":300}')
             .poster-btn.poster-prev-btn.glyphicon.glyphicon-chevron-left
             ul.poster-list
@@ -29,23 +29,27 @@ block content
                             span.glyphicon.glyphicon-leaf
                             span 应用场景
                         dd #{flower.scenarios}
-            .row.mt20.pl15.pr50
+            img.detail-text-img(src="/images/detail-img_1.jpg",align="center")
+            .row.mt40.pb20.pl15.pr50
                 dl.dl-horizontal
                     dt.c-green
                         span.glyphicon.glyphicon-leaf
                         span 地理分布
                     dd #{flower.location}
-            .row.mt20.pl15.pr50
+            img.detail-text-img(src="/images/detail-img_2.jpg",align="center")
+            .row.mt40.pb20.pl15.pr50
                 dl.dl-horizontal
                     dt.c-green
                         span.glyphicon.glyphicon-leaf
                         span 植物文化
                     dd #{flower.culture}
-            .row.mt40.pl15.pr50
+            img.detail-text-img(src="/images/detail-img_3.jpg",align="center")
+            .row.mt40.pb20.pl15.pr50
                 dl.dl-horizontal
                     dt.c-green
                         span.glyphicon.glyphicon-leaf
                         span 养护方式
                     dd #{flower.conservation}
-
+    .tips-info.container.text-right.pr50
+        p 以上介绍大部分来自维基百科，少部分来自百度百科。
     script(src="/js/detail.js")
