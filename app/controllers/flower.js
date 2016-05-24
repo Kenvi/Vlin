@@ -86,8 +86,9 @@ exports.savePoster = function(req,res,next){
 			if(OriginalFilename){
 				fs.readFile(FilePath,function(err,data){//读取文件
 					var timestamp = Date.now();
+					var random = Math.floor(Math.random()*99 + 1)+Math.floor(Math.random()*99 + 1);
 					var type = OriginalFilename.split('.')[1];
-					var poster = timestamp+'.'+type;
+					var poster = timestamp+random+'.'+type;
 					var newPath = path.join(__dirname,'../../','public/upload/'+ poster);
 
 					fs.writeFile(newPath,data,function(err){//文件写入upload
