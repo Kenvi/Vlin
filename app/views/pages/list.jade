@@ -2,8 +2,31 @@ extends ../layout
 
 
 block content
-   .container.mt40
-      .row
+   img(src="/images/pro-list-bannerbg.jpg",align="center",width="100%")
+   .container.mt100.pb100
+      .info-title
+         .title-content.text-center.p-r
+            h1 产品列表
+            span PRODUCTS LIST
+      ul.nav.nav-pills.mt40.list-nav.fs18.c-f.text-center
+         li.col-md-2.active 全部
+         each cat in catetories
+            li.col-md-2(data-id="#{cat._id}") #{cat.name}
+      .row.mt40.list-content
+         each cat in catetories
+            if cat.flowers && cat.flowers.length > 0
+               each item in cat.flowers
+                  .col-md-3.mt20.pro(data-cat="#{item.catetory}")
+                     a.d-b.pro-show.p-r(href="/flower/#{item._id}")
+                        img(src="/upload/#{item.poster[0]}",alt="#{item.title}",width="260",height="260")
+                        .pro-back.p-a.pt20
+                           h4 价格：¥#{item.price}
+                           h4 适合：#{item.scenarios}
+                           h4.text-center 立即查看
+                     h4.text-center #{item.title}
+      ul.pagination.pull-right
+
+      //-.row.mt100
          each cat in catetories
             .panel.panel-default
                .panel-heading
@@ -22,3 +45,4 @@ block content
                               .caption
                                  h3 #{item.title}
                                  p: a.btn.btn-primary(href="/flower/#{item._id}",role="button") 详情
+   script(src="/js/list.js")
