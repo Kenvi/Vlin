@@ -9,7 +9,7 @@ block content
                     li.poster-item
                         img(src="/upload/#{poster}", width="100%", align="center")
             .poster-btn.poster-next-btn.glyphicon.glyphicon-chevron-right
-        .detail-text.fs-2.mt40
+        .detail-text.fs18.mt40
             .row.mt20.pb20
                 .col-md-4.b-r.pt20
                     dl.dl-horizontal
@@ -35,21 +35,21 @@ block content
                     dt.c-green
                         span.glyphicon.glyphicon-leaf
                         span 地理分布
-                    dd #{flower.location}
+                    dd.pr15 #{flower.location}
             img.detail-text-img(src="/images/detail-img_2.jpg",align="center")
             .row.mt40.pb20.pl15.pr50
                 dl.dl-horizontal
                     dt.c-green
                         span.glyphicon.glyphicon-leaf
                         span 植物文化
-                    dd #{flower.culture}
+                    dd.pr15 #{flower.culture}
             img.detail-text-img(src="/images/detail-img_3.jpg",align="center")
             .row.mt40.pb20.pl15.pr50
                 dl.dl-horizontal
                     dt.c-green
                         span.glyphicon.glyphicon-leaf
                         span 养护方式
-                    dd #{flower.conservation}
+                    dd.pr15 #{flower.conservation}
     .tips-info.container.text-right.pr50
         p 以上介绍大部分来自维基百科，少部分来自百度百科。
     script(src="/js/detail.js")

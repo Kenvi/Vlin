@@ -1,13 +1,18 @@
 
 /*header*/
-.header-wrap{height: 110px;background: url("../images/header_bottom.png") center bottom repeat-x;}
-.logo a{width: 176px;height: 76px;background: url("../images/logo.png") center top no-repeat;}
-ul.nav.nav-pills li a{margin-top: 25px;}
-.mt20 .form-control{height: 38px;border: 2px solid #95c72a;border-radius: 20px;}
-.mt20 .btn{height: 38px;border: 2px solid #95c72a;border-radius: 20px;background:#95c72a;top: 0;color: #fff;}
+.header-wrap{min-width: 1170px;height: 110px;background: url("../images/header_bottom.png") center bottom repeat-x;}
+.header-wrap .container .pb15.pt15{width: 1170px;}
+.header-wrap .logo,.header-wrap .header-wrap form.mb20{width: 262px;padding: 0 15px;}
+.header-wrap .logo a{width: 176px;height: 76px;background: url("../images/logo.png") center top no-repeat;}
+.header-wrap ul.nav.nav-pills.header-nav{width: 556px;padding: 0 15px;}
+.header-wrap ul.nav.nav-pills li a{margin-bottom: 25px;}
+.input-group.pull-right.header-search{width: 262px;}
+.input-group.pull-right.header-search:after{clear: right;}
+.mb20 .form-control{width: 213px;height: 38px;border: 2px solid #95c72a;border-radius: 20px;}
+.mb20 .btn{height: 38px;border: 2px solid #95c72a;border-radius: 20px;background:#95c72a;top: 0;color: #fff;}
 
 /*footer*/
-.footer-wrap{height: 50px;line-height: 50px;}
+.footer-wrap{height: 50px;line-height: 50px;min-width: 1170px;}
 .footer-wrap a{color: #fff;}
 
 /*index*/
@@ -18,19 +23,21 @@ ul.nav.nav-pills li a{margin-top: 25px;}
 .title-content{width: 250px;height: 64px;top:5px;left:-10px; background:url("../images/title-content_bg.png") center top no-repeat;}
 .title-content h1{font-size: 30px;padding-top: 5px;margin-bottom: 0;}
 .title-content span{font-family: arial, sans-serif;}
+/*.index .about-us{width: 1170px;}*/
 .about-us .row .col-md-4{color: #95c72a;font-weight: normal;font-family: arial, sans-serif;}
 .best-pro .carousel-indicators{bottom: -60px;}
 .best-pro .carousel-indicators li{border: 1px solid #666;}
 .best-pro .carousel-indicators li.active{background: #666;}
-.news{height: 700px;background: url("../images/index-news_bg.png") center top no-repeat;}
+.news{min-width: 1170px;height: 700px;background: url("../images/index-news_bg.png") center top no-repeat;}
 .news .info-title{border-color:#fff;color: #fff; }
 .news .title-content{background: url("../images/title-content_green-bg.png") center top no-repeat;}
 .news a.news-content{color: #fff;border-bottom: 1px dashed #fff;}
 .news a.news-content h4{margin-bottom: 0;}
-/*.contact{min-height: 136px;background: url("../images/index-contact_bg.png") center top no-repeat;}*/
+.index .contact{min-width: 1170px;}
 .pro-show{width: 100%;padding:0;margin: 0 auto;box-sizing:border-box; transform-style: preserve-3d;transition:transform 0.5s ease-in-out,left 0.5s ease-in-out,top 0.5s ease-in-out;}
 .pro-show.is-inverse{transform:rotateY(180deg);-webkit-transform:rotateY(180deg);-moz-transform:rotateY(180deg);}
-.pro-show img{backface-visibility:hidden;}
+.pro-show img{backface-visibility:hidden;-webkit-backface-visibility:hidden;-moz-backface-visibility:hidden;-ms-backface-visibility:hidden;width: 260px;height: 260px;}
+/*.pro-show.is-inverse img{opacity: 0;}*/
 .pro-show .pro-back{width: 100%;height: 100%;color: #fff;padding: 30px 10px;top: 0;left: 0;box-sizing:border-box;transform:rotateY(180deg)translateZ(1px);backface-visibility:hidden;background: url("../images/pro-back_bg.jpg") center repeat;}
 .pro-show .pro-back h4{padding: 20px 0 0 50px;font-size: 22px;}
 .pro-show .pro-back h4.text-center{width: 150px;margin: 30px auto;padding: 10px 0;border: 1px solid #fff;border-radius: 5px;}
@@ -47,6 +54,7 @@ ul.nav.nav-pills li a{margin-top: 25px;}
 .panel-default .panel-heading h3{margin: 0;line-height: 35px;}
 .pro-list .list-nav{height: 44px;line-height: 44px;background: #95c72a;}
 .pro-list .list-nav.nav-pills li {padding: 0;margin: 0;cursor: pointer;}
+.pro-list .list-nav.nav-pills .col-md-2{width: 190px !important;}
 .pro-list .list-nav.nav-pills li.active,.pro-list .list-nav.nav-pills li:hover{background: #aee542;}
 .pro-list .list-content{height: 638px;overflow: hidden;}
 

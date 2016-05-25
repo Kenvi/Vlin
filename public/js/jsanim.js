@@ -10,16 +10,18 @@
 
 		    function initHeader() {
 		        width = document.body.clientWidth;
-		        height = 630;
+				if(width<1170){width=1170;}
+		        height = 0.328125*width;
 		        target = {x: width/2, y: height/2};
 
 		        largeHeader = document.getElementById('large-header');
 		        //console.log("test",document.getElementById('large-header'));
-		        largeHeader.style.height = 630+'px';
+		        largeHeader.style.width = width+'px';
+		        largeHeader.style.height = height+'px';
 
 		        canvas = document.getElementById('anmi-canvas');
 		        canvas.width = width;
-		        canvas.height = 630;
+		        canvas.height = height;
 		        ctx = canvas.getContext('2d');
 
 		        // create points
@@ -100,8 +102,10 @@
 
 		    function resize() {
 		        width = document.body.clientWidth;
-		        height = 630;
-		        largeHeader.style.height = height+'px';
+				if(width<1170){width=1170;}
+				height = 0.328125*width;
+				largeHeader.style.width = width+'px';
+				largeHeader.style.height = height+'px';
 		        canvas.width = width;
 		        canvas.height = height;
 		    }

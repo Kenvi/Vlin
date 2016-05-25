@@ -1,26 +1,22 @@
 .header-wrap
     .container
-        .row
-            .pb15.pt15.clearfix
-                .col-md-3
-                    .logo
-                        a.d-b(href="/")
-                .col-md-6
-                    ul.nav.nav-pills
-                        li
-                            a(href="/") 首页
-                        li
-                            a.ml30(href="/pro-list") 产品列表
-                        li
-                            a.ml30(href="/about-us") 关于我们
-                        li
-                            a.ml30(href="##") 养护知识
-                .col-md-3
-                    form.mt20(method="GET" action="/results")
-                        .input-group.pull-right
-                            input.form-control(type="text",name="q")
-                            span.input-group-btn
-                                button.btn.btn-default.glyphicon.glyphicon-search.pr20(type="submit",aria-hidden="true")
+        .pb15.pt15.clearfix
+            .logo.d-ib
+                a.d-b(href="/")
+            ul.nav.nav-pills.header-nav.d-ib
+                li
+                    a(href="/") 首页
+                li
+                    a.ml30(href="/pro-list") 产品列表
+                li
+                    a.ml30(href="/about-us") 关于我们
+                li
+                    a.ml30(href="##") 养护知识
+            form.mb20.d-ib(method="GET" action="/results")
+                .input-group.pull-right.header-search
+                    input.form-control(type="text",name="q")
+                    span.input-group-btn
+                        button.btn.btn-default.glyphicon.glyphicon-search.pr20(type="submit",aria-hidden="true")
 //-.navbar.navbar-default.navbar-fixed-bottom
     .container
         .navbar-header
