@@ -21,7 +21,7 @@ exports.detail = function(req,res){
 			res.redirect('/');
 		}else{
 			Comment
-				.find({movie:id})
+				.find({flower:id})
 				.populate('from','name')
 				.populate('reply.from reply.to','name')
 				.exec(function(err,comments){

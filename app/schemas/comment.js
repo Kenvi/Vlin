@@ -3,7 +3,7 @@ const Schema = mongoose.Schema;
 const ObjectId = Schema.Types.ObjectId;
 
 var CommentSchema  = new Schema({
-	movie:{
+	flower:{
 		type:ObjectId,
 		ref:'Flower'
 	},

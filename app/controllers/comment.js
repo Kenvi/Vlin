@@ -4,7 +4,7 @@ const Comment = require('../models/comment');
 //comment
 exports.save = function(req,res){
 	var _comment = req.body.comment;
-	var movieId = _comment.movie;
+	var flowerId = _comment.flower;
 
 	if(_comment.cid){
 		Comment.findById(_comment.cid,function(err,comment){
@@ -23,7 +23,7 @@ exports.save = function(req,res){
 				}
 				console.log(comment + '23333');
 
-				res.redirect('/flower/' + movieId);
+				res.redirect('/flower/' + flowerId);
 			})
 		})
 	}else{
@@ -33,7 +33,7 @@ exports.save = function(req,res){
 				console.log(err);
 			}
 
-			res.redirect('/flower/' + movieId);
+			res.redirect('/flower/' + flowerId);
 		})
 	}
 
