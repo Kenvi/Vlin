@@ -41,10 +41,10 @@
 		            var p1 = points[i];
 		            for(var j = 0; j < points.length; j++) {
 		                var p2 = points[j]
-		                if(!(p1 == p2)) {
+		                if(!(p1 == p2)) {//如果p1 !== p2
 		                    var placed = false;
 		                    for(var k = 0; k < 6; k++) {
-		                        if(!placed) {
+		                        if(!placed) {//true
 		                            if(closest[k] == undefined) {
 		                                closest[k] = p2;
 		                                placed = true;

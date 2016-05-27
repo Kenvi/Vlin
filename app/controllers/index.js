@@ -33,7 +33,7 @@ exports.search =  function(req,res){
 	var catId = req.query.cat;
 	var q = req.query.q;
 	var page = parseInt(req.query.p, 10) || 0;
-	const count = 2;
+	const count = 5;
 	var index = page * count;
 
 	if(catId){

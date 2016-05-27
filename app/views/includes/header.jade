@@ -17,21 +17,25 @@
                     input.form-control(type="text",name="q")
                     span.input-group-btn
                         button.btn.btn-default.glyphicon.glyphicon-search.pr20(type="submit",aria-hidden="true")
-//-.navbar.navbar-default.navbar-fixed-bottom
+.navbar.navbar-default.navbar-fixed-bottom.bg-green.c-f
     .container
         .navbar-header
-            a.navbar-brand(href="/")  微林绿化
+            span.fs-2.pr50 关于我们
+            a.pr20(href="/about-us#introduction") 公司简介
+            a(href="about-us#cooperation") 合作案例
+            span.pr20.pl100 © 2016 by 广州微林园林绿化工程有限公司 All Rights Reserved
+            span 粤ICP备15073300号
         if user
             p.navbar-text.navbar-right
-                span 欢迎您，#{user.name}
-                span &nbsp;|&nbsp;
+                span.c-f 欢迎您，#{user.name}
+                span.c-f &nbsp;|&nbsp;
                 a.navbar-link(href="/logout")  登出
         else  
             p.navbar-text.navbar-right
                 a.navbar-link(href="#",data-toggle="modal",data-target="#signupModal")  注册
-                span &nbsp;|&nbsp;
+                span.c-f &nbsp;|&nbsp;
                 a.navbar-link(href="#",data-toggle="modal",data-target="#signinModal")  登陆
-//-#signupModal.modal.fade
+#signupModal.modal.fade
     .modal-dialog
         .modal-content
             form(method="POST",action="/user/signup")
@@ -46,7 +50,7 @@
                 .modal-footer
                     button.btn.btn-default(type="button",data-dismiss="modal")  关闭
                     button.btn.btn-success(type="submit")  提交
-//-#signinModal.modal.fade
+#signinModal.modal.fade
     .modal-dialog
         .modal-content
             form(method="POST",action="/user/signin")

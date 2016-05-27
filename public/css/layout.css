@@ -10,6 +10,10 @@
 .input-group.pull-right.header-search:after{clear: right;}
 .mb20 .form-control{width: 213px;height: 38px;border: 2px solid #95c72a;border-radius: 20px;}
 .mb20 .btn{height: 38px;border: 2px solid #95c72a;border-radius: 20px;background:#95c72a;top: 0;color: #fff;}
+.navbar.navbar-default.navbar-fixed-bottom.bg-green a{color:#fff;}
+.navbar.navbar-default.navbar-fixed-bottom.bg-green.c-f{min-width: 1170px;height: 53px;}
+.navbar.navbar-default.navbar-fixed-bottom.bg-green .navbar-header{line-height: 50px;}
+.navbar.navbar-default.navbar-fixed-bottom.bg-green .navbar-text{width: 72px;float: left;}
 
 /*footer*/
 .footer-wrap{height: 50px;line-height: 50px;min-width: 1170px;}

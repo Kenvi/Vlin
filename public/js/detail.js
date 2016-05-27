@@ -62,7 +62,7 @@ $(function(){
 			"delay":5000,
 			"verticalAlign":"middle" //top bottom
 		};
-		$.extend(this.setting,this.getSetting());
+		$.extend(this.setting,this.getSetting());//将实际配置参数扩展替换掉默认配置
 
 		//设置配置参数值
 		this.setSettingValue();
@@ -94,6 +94,7 @@ $(function(){
 
 	};
 	Carousel.prototype = {
+		//自动播放
 		autoPlay:function(){
 			var self = this;
 			this.timer = window.setInterval(function(){
