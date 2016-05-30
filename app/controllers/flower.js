@@ -1,7 +1,7 @@
 const Flower = require('../models/flower');
 const Comment = require('../models/comment');
 const Catetory = require('../models/catetory');
-const _ = require('underscore');
+const _ = require('underscore');//主要调用其extend方法替换更新过的产品信息
 const fs = require('fs');
 const path = require('path');
 
@@ -160,7 +160,7 @@ exports.save = function(req,res){
 			if(err){
 				console.log(err);
 			}
-			_flower = _.extend(flower,flowerObj);
+			_flower = _.extend(flower,flowerObj);//更新的数据替换原来的数据
 			_flower.save(function(err,flower){
 				if(err){
 					console.log(err);

@@ -30,9 +30,9 @@ var FlowerSchema  = new Schema({
 	}
 })
 
-FlowerSchema.pre('save', function(next){
+FlowerSchema.pre('save', function(next){//保存前先判断数据是否新建
 	if(this.isNew){
-		this.meta.createAt = this.meta.updateAt = Date.now();
+		this.meta.createAt = this.meta.updateAt = Date.now();//如果是新建则录入时间等于更新时间
 	}else{
 		this.meta.updateAt = Date.now();
 	}
@@ -41,10 +41,10 @@ FlowerSchema.pre('save', function(next){
 })
 
 FlowerSchema.statics = {
-	fetch : function(cb){
+	fetch : function(cb){//取出当前数据库所有数据
 		return this
 		.find({})
-		.sort('meta.updateAt')
+		.sort('meta.updateAt')//按更新时间排序，然后回调
 		.exec(cb)
 	},
 	findById : function(id, cb){

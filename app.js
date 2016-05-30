@@ -1,17 +1,17 @@
-const express = require('express');
-const path = require('path');
+const express = require('express');//引用Express框架
+const path = require('path');//引用路径模块
 const fs = require('fs');
-const bodyParser = require('body-parser');
-const mongoose = require('mongoose');
+const bodyParser = require('body-parser');//将表单提交的数据序列化
+const mongoose = require('mongoose');//数据库模型设计模块，能对mongodb进行建模操作
 const cookieParser = require('cookie-parser');
 const multipart = require('connect-multiparty');
 const session = require('express-session');
 const mongoStore = require('connect-mongo')(session);
 const logger = require('morgan');
-const port = process.env.PORT || 3000 ;
+const port = process.env.PORT || 3000 ;//设置项目启动端口默认为3000（如果在开发环境设置端口则启动端口变为设置端口）
 var app = express();
-var dbUrl = 'mongodb://127.0.0.1:27017/vlin';
-var db = mongoose.connect(dbUrl);
+var dbUrl = 'mongodb://127.0.0.1:27017/vlin';//本地数据库url
+var db = mongoose.connect(dbUrl);//连接数据库
 
 //models loading
 //var models_path = __dirname + '/app/models';
@@ -34,8 +34,8 @@ var db = mongoose.connect(dbUrl);
 //}
 //walk(models_path);
 
-app.set('views','./app/views/pages');
-app.set('view engine','jade');
+app.set('views','./app/views/pages');//设置视图文件路径
+app.set('view engine','jade');//设置模板引擎
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(cookieParser());
 app.use(multipart());
@@ -50,13 +50,13 @@ app.use(session({
 var env = process.env.NODE_ENV || 'development';
 if('development' === env){//开发环境调试输出内容
 	app.set('showStarkError',true);//堆栈出错
-	app.use(logger(':method :url :status'));//输出请求方式 地址 状态吗
+	app.use(logger(':method :url :status'));//输出请求方式 地址 状态码
 	app.locals.pretty = true;
 	mongoose.set('debug',true);//数据库变化输出
 }
 require('./config/routes')(app);
-app.use(express.static(path.join(__dirname, 'public')));
-app.locals.moment = require('moment');
+app.use(express.static(path.join(__dirname, 'public')));//使用路径模块设置静态资源默认路径
+app.locals.moment = require('moment');//日期格式化模块
 app.listen(port);
 
 console.log('Server start on port ' + port);

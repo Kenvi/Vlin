@@ -18,7 +18,7 @@ $(function(){
     addBurster(pro.length);
     setBurster(pro);
 
-    //选项卡切换
+    //类别选项卡切换
     $('.list-nav li').click(function(){
 
         $(this).addClass('active').siblings().removeClass('active');
