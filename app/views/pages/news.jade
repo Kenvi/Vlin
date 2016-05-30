@@ -1,0 +1,41 @@
+extends ../layout
+
+block content
+   img(src="/images/news-bannerbg.jpg",align="center",width="100%",style="min-width:1170px")
+   .container.mt100.pb100
+      .row
+         .col-md-3.fs18.text-center
+            .navbar.navbar-success(role="navigation")
+               h3.bg-green.c-f.fs18 新闻列表
+               ul.nav.navbar-nav
+                  li.active
+                     a(href="##") 寻找最美导师
+                  li
+                     a(href="##") 让最美导游传递正能量
+                  li
+                     a(href="##") 让最美导游传递正能量
+                  li
+                     a(href="##") 让最美导游传递正能量
+                  li
+                     a(href="##") 让最美导游传递正能量
+         .col-md-9.pl25
+            h2.text-center 让最美导游传递正能量
+            p.fs14.c-9.text-center 2015.11.11
+            hr
+            .news-content.fs18 #{newsContent1}
+            .news-content.fs18 #{newsContent2}
+            .news-content.fs18 #{newsContent3}
+            .news-content.fs18 #{newsContent4}
+            .news-content.fs18 #{newsContent5}
+            .news-content.fs18 #{newsContent6}
+            .news-content.fs18 #{newsContent7}
+            .news-content.fs18 #{newsContent8}
+            .news-content.fs18 #{newsContent9}
+            hr
+            .pb10
+               .pull-left
+                  span 上一篇：&nbsp;&nbsp;
+                  a(href="##") 食品饮料动态行业跟踪报告
+               .pull-right
+                  span 下一篇：&nbsp;&nbsp;
+                  a(href="##") 食品检查报告

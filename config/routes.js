@@ -2,6 +2,8 @@ const Flower= require('../app/controllers/flower');
 const Index = require('../app/controllers/index');
 const Product = require('../app/controllers/list');
 const About = require('../app/controllers/about');
+const News = require('../app/controllers/news');
+const Knowledge = require('../app/controllers/knowledge');
 const User = require('../app/controllers/user');
 const Comment = require('../app/controllers/comment');
 const Catetory = require('../app/controllers/catetory');
@@ -24,6 +26,12 @@ module.exports = function(app){
 
 	//about-us
 	app.get('/about-us',About.about);
+
+	//knowledge
+	app.get('/knowledge',Knowledge.knowledge);
+
+	//news
+	app.get('/news',News.news);
 
 	//User
 	app.post('/user/signup',User.signup);	
