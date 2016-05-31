@@ -1,12 +1,12 @@
 const express = require('express');//引用Express框架
 const path = require('path');//引用路径模块
-const fs = require('fs');
-const bodyParser = require('body-parser');//将表单提交的数据序列化
+const fs = require('fs');//文件读写模块
+const bodyParser = require('body-parser');//将表单提交的数据序列化成对象
 const mongoose = require('mongoose');//数据库模型设计模块，能对mongodb进行建模操作
-const cookieParser = require('cookie-parser');
+const cookieParser = require('cookie-parser');//解析浏览器cookie数据的中间件，这个模块配合session使用
 const multipart = require('connect-multiparty');
-const session = require('express-session');
-const mongoStore = require('connect-mongo')(session);
+const session = require('express-session');//express框架session中间件，用来在服务器暂时端存储用户数据
+const mongoStore = require('connect-mongo')(session);//存储session到数据库所需的中间件
 const logger = require('morgan');
 const port = process.env.PORT || 3000 ;//设置项目启动端口默认为3000（如果在开发环境设置端口则启动端口变为设置端口）
 var app = express();
@@ -40,7 +40,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(cookieParser());
 app.use(multipart());
 app.use(session({
-	secret:'imooc',
+	secret:'vlin',
 	store:new mongoStore({
 		url:dbUrl,
 		collection:'sessions'

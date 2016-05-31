@@ -23,8 +23,7 @@ var UserSchema = new mongoose.Schema({
 			default : Date.now()
 		}
 	}
-
-})
+});
 
 UserSchema.pre('save', function(next){
 	var user = this;
@@ -44,12 +43,11 @@ UserSchema.pre('save', function(next){
 				return next(err);
 			}
 			user.password = hash;
-			console.log(user.password)
 			next();
 		})
 	});
 
-})
+});
 
 UserSchema.methods = {
 	comparePassword:function(_password , cb){
@@ -75,6 +73,6 @@ UserSchema.statics = {
 		.findOne({_id:id})
 		.exec(cb)
 	}
-}
+};
 
 module.exports = UserSchema;

@@ -14,7 +14,7 @@ exports.detail = function(req,res){
 		if(err){
 			console.log(err);
 		}
-	})
+	});
 
 	Flower.findById(id,function(err,flower){
 		if(err){
@@ -39,7 +39,7 @@ exports.detail = function(req,res){
 
 	})
 
-}
+};
 
 //admin new page
 exports.new = function(req,res){

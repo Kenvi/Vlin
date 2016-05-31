@@ -17,13 +17,14 @@
                     input.form-control(type="text",name="q")
                     span.input-group-btn
                         button.btn.btn-default.glyphicon.glyphicon-search.pr20(type="submit",aria-hidden="true")
-//-.navbar.navbar-default.navbar-fixed-bottom.bg-green.c-f
+.navbar.navbar-default.navbar-fixed-bottom.bg-green.c-f
     .container
         .navbar-header
             span.fs-2.pr50 关于我们
             a.pr20(href="/about-us#introduction") 公司简介
-            a(href="about-us#cooperation") 合作案例
-            span.pr20.pl100 © 2016 by 广州微林园林绿化工程有限公司 All Rights Reserved
+            a.pr20(href="/about-us#cooperation") 合作案例
+            a(href="/news") 新闻公告
+            span.pr20.pl70 © 2016 by 广州微林园林绿化工程有限公司 All Rights Reserved
             span 粤ICP备15073300号
         if user
             p.navbar-text.navbar-right
