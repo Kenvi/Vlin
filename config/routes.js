@@ -47,7 +47,7 @@ module.exports = function(app){
 	app.get('/flower/:id',Flower.detail);
 	app.get('/admin/flower/new',User.signinRequest,User.adminRequest,Flower.new);
 	app.get('/admin/flower/update/:id',User.signinRequest,User.adminRequest,Flower.update);
-	app.post('/admin/flower',User.signinRequest,User.adminRequest,Flower.savePoster,Flower.save);
+	app.post('/admin/flower',User.signinRequest,User.adminRequest,Flower.saveThumbnail,Flower.savePoster,Flower.save);
 	app.get('/admin/flower/list',User.signinRequest,User.adminRequest,Flower.list);
 	app.delete('/admin/flower/list',User.signinRequest,User.adminRequest, Flower.del);
 

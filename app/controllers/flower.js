@@ -76,7 +76,7 @@ exports.savePoster = function(req,res,next){
 	var posterData = req.files.uploadPoster;
 
 	if(posterData.length > 1){//上传一张以上图片
-		var j =0;
+		var j=0,J=0;
 		req.poster = [];
 
 		for(var i=0;i<posterData.length;i++){
@@ -86,16 +86,15 @@ exports.savePoster = function(req,res,next){
 			if(OriginalFilename){
 				fs.readFile(FilePath,function(err,data){//读取文件
 					var timestamp = Date.now();
-					var random = Math.floor(Math.random()*99 + 1)+Math.floor(Math.random()*99 + 1);
 					var type = OriginalFilename.split('.')[1];
-					var poster = timestamp+random+'.'+type;
+					var poster = timestamp+j+'.'+type;
 					var newPath = path.join(__dirname,'../../','public/upload/'+ poster);
+					j++;
 
 					fs.writeFile(newPath,data,function(err){//文件写入upload
-						j++;
+						J++;
 						req.poster.push(poster);
-
-						if(j == posterData.length){
+						if(J == posterData.length){
 							next();
 						}
 
@@ -131,6 +130,30 @@ exports.savePoster = function(req,res,next){
 
 };
 
+//admin thumbnail
+exports.saveThumbnail = function(req,res,next){
+	var thumbnailData = req.files.thumbnail;
+	var filePath = thumbnailData.path;
+	var originalFilename = thumbnailData.originalFilename;
+
+	if(originalFilename){
+		fs.readFile(filePath,function(err,data){
+			var timestamp = Date.now();
+			var type = thumbnailData.type.split('/')[1];
+			var thumbnail = timestamp+'thumbnail'+'.'+type;
+			var newPath = path.join(__dirname,'../../','public/upload/'+ thumbnail);
+
+			fs.writeFile(newPath,data,function(err){
+				req.thumbnail = thumbnail;
+				next();
+			})
+		})
+	}else{
+		next();
+	}
+};
+
+
 //admin post flower
 exports.save = function(req,res){
 	var id = req.body.flower._id;
@@ -139,6 +162,10 @@ exports.save = function(req,res){
 
 	if(req.poster){
 		flowerObj.poster = req.poster;
+	}
+
+	if(req.thumbnail){
+		flowerObj.thumbnail = req.thumbnail;
 	}
 
 	if(id){//该产品存在，变为修改更新
@@ -227,7 +254,7 @@ exports.list = function(req,res){
 		})
 	})
 
-}
+};
 
 //list delete flower
 exports.del = function(req,res){
@@ -241,4 +268,4 @@ exports.del = function(req,res){
 			}
 		})
 	}
-}
+};

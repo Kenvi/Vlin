@@ -40,7 +40,11 @@ block content
                     .col-sm-10
                         input#inputPoster.form-control(type="text",name="flower[poster]",value=flower.poster)
                 .form-group
-                    label.col-sm-2.control-label(for="inputPoster") 图片上传
+                    label.col-sm-2.control-label(for="thumbnail") 产品缩略图上传
+                    .col-sm-10
+                        input#thumbnail(type="file",name="thumbnail",value=flower.thumbnail)
+                .form-group
+                    label.col-sm-2.control-label(for="inputPoster") 产品图片上传
                     .col-sm-10
                         input#uploadPoster(type="file",multiple,name="uploadPoster")
                 .form-group

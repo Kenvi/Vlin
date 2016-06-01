@@ -18,7 +18,7 @@ block content
                each item in cat.flowers
                   .col-md-3.mt20.pro(data-cat="#{item.catetory}")
                      a.d-b.pro-show.p-r(href="/flower/#{item._id}")
-                        img(src="/upload/#{item.poster[0]}",alt="#{item.title}",width="260",height="260")
+                        img(src="/upload/#{item.thumbnail}",alt="#{item.title}",width="260",height="260")
                         .pro-back.p-a.pt20
                            h4 价格：¥#{item.price}
                            h4 适合：#{item.scenarios}

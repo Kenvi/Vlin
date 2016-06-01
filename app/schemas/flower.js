@@ -9,6 +9,7 @@ var FlowerSchema  = new Schema({
 	culture : String,
 	conservation : String,
 	price : String,
+	thumbnail : String,
 	poster : [{type:String}],
 	pv : {
 		type : Number,
