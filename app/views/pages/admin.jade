@@ -50,7 +50,11 @@ block content
                 .form-group
                     label.col-sm-2.control-label(for="inputPrice") 价格
                     .col-sm-10
-                        input#inputPrice.form-control(type="text",name="flower[price]",value=flower.price)
+                        input#inputPrice.form-control(type="number",name="flower[price]",value=flower.price)
+                .form-group
+                    label.col-sm-2.control-label(for="inputPrice") 推荐指数
+                    .col-sm-10
+                        input#inputPrice.form-control(type="number",min="1",max="10",name="flower[recommend]",value=flower.recommend)
                 .form-group
                     label.col-sm-2.control-label(for="inputConservation") 养护方式
                     .col-sm-10

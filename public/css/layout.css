@@ -30,6 +30,7 @@
 /*.index .about-us{width: 1170px;}*/
 .index .about-us .row .col-md-4{color: #95c72a;font-weight: normal;font-family: arial, sans-serif;}
 .index .best-pro .carousel-indicators{bottom: -60px;}
+.index .best-pro .carousel-inner{height: 260px;}
 .index .best-pro .carousel-indicators li{border: 1px solid #666;}
 .index .best-pro .carousel-indicators li.active{background: #666;}
 .index .news{min-width: 1170px;height: 700px;background: url("../images/index-news_bg.png") center top no-repeat;}

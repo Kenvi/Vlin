@@ -15,6 +15,10 @@ var FlowerSchema  = new Schema({
 		type : Number,
 		default : 0
 	},
+	recommend : {
+		type : Number,
+		default : 0
+	},
 	catetory : {
 		type : ObjectId,
 		ref : 'Catetory'
@@ -29,7 +33,7 @@ var FlowerSchema  = new Schema({
 			default : Date.now()
 		}
 	}
-})
+});
 
 FlowerSchema.pre('save', function(next){//保存前先判断数据是否新建
 	if(this.isNew){
@@ -39,7 +43,7 @@ FlowerSchema.pre('save', function(next){//保存前先判断数据是否新建
 	}
 
 	next();
-})
+});
 
 FlowerSchema.statics = {
 	fetch : function(cb){//取出当前数据库所有数据
@@ -53,6 +57,6 @@ FlowerSchema.statics = {
 		.findOne({_id:id})
 		.exec(cb)
 	}
-}
+};
 
 module.exports = FlowerSchema;

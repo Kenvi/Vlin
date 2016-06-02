@@ -69,67 +69,38 @@ block content
         .row.mt40.wrap
             #bestPro.carousel.slide(data-ride="carousel")
                 ol.carousel-indicators
-                    li.active(data-target="#bestPro",data-slide-to="0")
-                    li(data-target="#bestPro",data-slide-to="1")
                 .carousel-inner
-                    .item.active
-                        .col-md-3
-                            a.d-b.pro-show.p-r(href="/flower/5744674f53c32f501f07a02c")
-                                img(src="/upload/bestpro_1.png",alt="")
-                                .pro-back.p-a.pt20
-                                    h4 价格：¥520
-                                    h4 适合：送女票
-                                    h4.text-center 立即查看
-                        .col-md-3
-                            a.d-b.pro-show.p-r(href="/flower/5744660153c32f501f07a02b")
-                                img(src="/upload/bestpro_2.png",alt="")
-                                .pro-back.p-a.pt20
-                                    h4 价格：¥520
-                                    h4 适合：送女票
-                                    h4.text-center 立即查看
-                        .col-md-3
-                            a.d-b.pro-show.p-r(href="/flower/5744656753c32f501f07a02a")
-                                img(src="/upload/bestpro_3.png",alt="")
-                                .pro-back.p-a.pt20
-                                    h4 价格：¥520
-                                    h4 适合：送女票
-                                    h4.text-center 立即查看
-                        .col-md-3
-                            a.d-b.pro-show.p-r(href="/flower/574464ef53c32f501f07a028")
-                                img(src="/upload/bestpro_4.png",alt="")
-                                .pro-back.p-a.pt20
-                                    h4 价格：¥520
-                                    h4 适合：送女票
-                                    h4.text-center 立即查看
-                    .item
-                        .col-md-3
-                            a.d-b.pro-show.p-r(href="/flower/574471b32df74f2c2e0b125e")
-                                img(src="/upload/1464103347372.jpeg",alt="")
-                                .pro-back.p-a.pt20
-                                    h4 价格：¥520
-                                    h4 适合：送女票
-                                    h4.text-center 立即查看
-                        .col-md-3
-                            a.d-b.pro-show.p-r(href="/flower/57451bd320442aa037c968e2")
-                                img(src="/upload/1464146899660.jpeg",alt="")
-                                .pro-back.p-a.pt20
-                                    h4 价格：¥520
-                                    h4 适合：送女票
-                                    h4.text-center 立即查看
-                        .col-md-3
-                            a.d-b.pro-show.p-r(href="/flower/57451bf720442aa037c968e3")
-                                img(src="/upload/1464146935648.jpeg",alt="")
-                                .pro-back.p-a.pt20
-                                    h4 价格：¥520
-                                    h4 适合：送女票
-                                    h4.text-center 立即查看
-                        .col-md-3
-                            a.d-b.pro-show.p-r(href="/flower/57451c1720442aa037c968e4")
-                                img(src="/upload/1464146967649.jpeg",alt="")
-                                .pro-back.p-a.pt20
-                                    h4 价格：¥520
-                                    h4 适合：送女票
-                                    h4.text-center 立即查看
+                    if flowers.length <= 4
+                        .item.active
+                            each item in flowers
+                                .col-md-3
+                                    a.d-b.pro-show.p-r(href="/flower/#{item._id}")
+                                        img(src="/upload/#{item.thumbnail}",alt="#{item.title}")
+                                        .pro-back.p-a.pt20
+                                            h4 价格：¥#{item.price}
+                                            h4 适合：#{item.scenarios}
+                                            h4.text-center 立即查看
+                    if flowers.length > 4
+                        - for(var i=0;i<Math.floor(flowers.length/4);i++)
+                            .item
+                                - for(var k=i*4;k<(i+1)*4;k++)
+                                    .col-md-3
+                                        a.d-b.pro-show.p-r(href="/flower/#{flowers[k]._id}")
+                                            img(src="/upload/#{flowers[k].thumbnail}",alt="#{flowers[k].title}")
+                                            .pro-back.p-a.pt20
+                                                h4 价格：¥#{flowers[k].price}
+                                                h4 适合：#{flowers[k].scenarios}
+                                                h4.text-center 立即查看
+                        - if(flowers.length%4 !=0)
+                            .item
+                                - for(var j=Math.floor(flowers.length/4)*4;j<flowers.length;j++)
+                                    .col-md-3
+                                        a.d-b.pro-show.p-r(href="/flower/#{flowers[j]._id}")
+                                            img(src="/upload/#{flowers[j].thumbnail}",alt="#{flowers[j].title}")
+                                            .pro-back.p-a.pt20
+                                                h4 价格：¥#{flowers[j].price}
+                                                h4 适合：#{flowers[j].scenarios}
+                                                h4.text-center 立即查看
     .contact.mt160.pt10.pb100
         a.d-b(href="/about-us#contactUs")
             img(src="/images/index-map.png",width="100%")

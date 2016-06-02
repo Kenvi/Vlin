@@ -5,10 +5,9 @@ const Banner = require('../models/banner');
 
 //index page
 exports.index =  function(req,res){
-	Catetory
-		.find({})
-		.populate({path:'flowers',options:{limit:5}})
-		.exec(function(err,catetories){
+	Flower
+		.find({'recommend' : {$gt : 5}})
+		.exec(function(err,flowers){
 			if(err){
 				console.log(err);
 			}
@@ -20,7 +19,7 @@ exports.index =  function(req,res){
 				res.render('index', {
 					title:'广州微林园林绿化工程有限公司-首页',
 					bodytype:'index',
-					catetories:catetories,
+					flowers:flowers,
 					banners:banners
 				})
 			})
