@@ -3,7 +3,7 @@ extends ../layout
 
 block content
    img(src="/images/pro-list-bannerbg.jpg",align="center",width="100%",style="min-width:1170px")
-   .container.mt100.pb100.wrap
+   .container.mt100.wrap
       .info-title
          .title-content.text-center.p-r
             h1 产品列表
@@ -25,7 +25,34 @@ block content
                            h4.text-center 立即查看
                      h4.text-center #{item.title}
       ul.pagination.pull-right
-
+   .container.mt100.pb100.our-service
+      .info-title
+         .title-content.text-center.p-r
+            h1 提供服务
+            span OUR SERVICE
+      .row.mt40
+         .col-md-6
+            img(src="/images/list-service.jpg",width="555px",alt="我们的服务")
+         .col-md-6.fs18.pl15
+            p &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;广州微林园林绿化工程有限公司是广州市目前最专业的室内绿化植物租赁，室内绿化管理团队之一，我们努力为客户营造优雅、茵绿、美观、舒适的办公环境。
+            p &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;我们意识到客户的个性化需求，为此精心准备了一百多种植物供客户选择，并为客户提供植物摆放设计，用精美的配套物品装饰植物，力求达到艺术性、欣赏性和实用性的完美结合。
+            p &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;我们凭借专心的服务理念、优质专业的服务质量在植物租赁业务上取得了长足的发展，为各行各业多家客户提供良好的服务，在服务过程中我们赢得了客户的普遍赞誉。
+            p 我们的服务理念：专业、专注、专心。
+            p 我们的服务宗旨：提供优质服务，营造优雅、茵绿、美观、舒适的绿化环境。
+            p 我们的服务承诺：
+               br
+               span （1）规范的服务，专业的技术，公道的价格；
+               br
+               span （2）免费为您设计摆放效果，为您量身营造茵绿的自然办公环境；
+               br
+               span （3）配送一步到位，定期养护，定期更换，保证观赏效果。
+            p 我们的服务标准：
+               br
+               span （1）植物造型美观，摆放合理，叶色自然；
+               br
+               span （2）清洁卫生，叶面无尘土，无枯枝落叶，无病无虫，盆土无异味；
+               br
+               span （3）定期进行质量服务检查征求客户意见，及时解决出现问题。
       //-.row.mt100
          each cat in catetories
             .panel.panel-default
