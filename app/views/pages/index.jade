@@ -14,10 +14,10 @@ block content
             .carousel-inner
                 - for(var j=0;j<banners.length;j++){
                     - if(j==0){
-                        .item.active
+                        a.item.active(href="/news")
                             img(src="/upload/#{banners[0].banner}",alt="#{banners[0].name}")
                     - }else{
-                        .item
+                        a.item(href="/news")
                             img(src="/upload/#{banners[j].banner}",alt="#{banners[j].name}")
                     - }
                 - }
@@ -50,11 +50,11 @@ block content
                     img(src="/upload/news-img_1.png",alt="")
                 .col-md-5.mt10
                     a.d-b.news-content(href="/news")
-                        h4 2015城市园林绿化企业50强出炉
+                        h4 广州微林园林绿化工程有限公司企业网站上线啦
                         span 2015-12-25
                         p.mt10 由《中国花卉报》联合中国建筑业协会古建筑与园林施工分会、中国风景园林学会园林工程分会开展的“全国2015年度城市园林绿化企业50强”评选活动，于4月16日结束，共有62家企业上榜，14家单位净利润超亿元。
                     a.d-b.news-content(href="/news")
-                        h4 2015城市园林绿化企业50强出炉
+                        h4 本公司推出办公室清洁绿化一条龙服务
                         span 2015-12-25
                         p.mt10 由《中国花卉报》联合中国建筑业协会古建筑与园林施工分会、中国风景园林学会园林工程分会开展的“全国2015年度城市园林绿化企业50强”评选活动，于4月16日结束，共有62家企业上榜，14家单位净利润超亿元。
                     a.d-b.news-content(href="/news")
