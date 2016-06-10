@@ -6,7 +6,7 @@ exports.showSignup = function(req,res){
 	res.render('signup', {
 		title:'广州微林园林绿化工程有限公司-注册'
 	})
-}
+};
 
 exports.signup = function(req,res){
 	var _user = req.body.user;
@@ -23,12 +23,13 @@ exports.signup = function(req,res){
 				if(err){
 					console.log(err);
 				}
+				req.session.user = user;
 				res.redirect('/')
 			})
 		}
 	})
 	
-}
+};
 
 
 //signin
@@ -36,7 +37,7 @@ exports.showSignin = function(req,res){
 	res.render('signin', {
 		title:'广州微林园林绿化工程有限公司-登陆'
 	})
-}
+};
 
 exports.signin =function(req,res){
 	var _user = req.body.user;
@@ -59,17 +60,18 @@ exports.signin =function(req,res){
 				req.session.user = user;				
 				return res.redirect('/');
 			}else{
+				//console.log(isMatch);
 				return res.redirect('/signin');
 			}
 		})
 	})
-}
+};
 
 //logout
 exports.logout =function(req,res){
 	delete req.session.user;
 	res.redirect('/');
-}
+};
 
 //userlist page
 exports.list =function(req,res){
@@ -84,7 +86,7 @@ exports.list =function(req,res){
 		})
 	})
 	
-}
+};
 
 //midware for user
 exports.signinRequest =function(req,res,next){

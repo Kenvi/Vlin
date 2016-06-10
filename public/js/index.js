@@ -12,6 +12,12 @@ $('.pro-show').hover(function(){
     $(this).removeClass('is-inverse');
 });
 
+//点击banner跳转
+$('#anmi-canvas').parent().click(function(){
+    var href = $('.carousel-inner .item.active').attr('href');
+    $(this).attr('href',href);
+});
+
 //操作推荐产品dom结构
 $(function(){
     var pro = $('#bestPro .carousel-inner .col-md-3');

@@ -59,7 +59,7 @@ UserSchema.methods = {
 			cb(null,isMatch);
 		})
 	}
-}
+};
 
 UserSchema.statics = {
 	fetch : function(cb){

@@ -62,7 +62,6 @@
 .pro-list .list-nav.nav-pills .col-md-2{width: 190px !important;}
 .pro-list .list-nav.nav-pills li.active,.pro-list .list-nav.nav-pills li:hover{background: #aee542;}
 .pro-list .list-content{height: 638px;overflow: hidden;}
-.pro-list .our-service .col-md-6 p{line-height: 190%;}
 
 /*detail*/
 .poster-main{ position:relative;width:1170px;height:653px;}
@@ -87,6 +86,8 @@
 /*about-us*/
 .about .weixin-code{width: 220px;border-left: 1px solid #649332;}
 .introduction p{line-height: 150%;}
+.introduction .history p{line-height: 190%;}
+.about .our-service .col-md-6 p{line-height: 190%;}
 
 /*news&&knowledge*/
 .news .navbar.navbar-success h3,.knowledge .navbar.navbar-success h3{margin-bottom: 0;padding: 30px 0;}
