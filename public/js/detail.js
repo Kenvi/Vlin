@@ -46,7 +46,7 @@ $(function(){
 		if(this.posterItems.size()%2==0){
 			this.posterItemMain.append(this.posterItems.eq(0).clone());
 			this.posterItems = this.posterItemMain.children();
-		};
+		}
 		this.posterFirstItem  = this.posterItems.first();
 		this.posterLastItem  = this.posterItems.last();
 		this.rotateFlag   = true;
