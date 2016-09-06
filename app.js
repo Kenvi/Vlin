@@ -10,8 +10,8 @@ const mongoStore = require('connect-mongo')(session);//存储session到数据库
 const logger = require('morgan');
 const port = process.env.PORT || 3000 ;//设置项目启动端口默认为3000（如果在开发环境设置端口则启动端口变为设置端口）
 var app = express();
-//var dbUrl = 'mongodb://127.0.0.1:27017/vlin';//本地数据库url
-var dbUrl = 'mongodb://121.42.182.127:27017/vlin';//阿里云数据库url
+var dbUrl = 'mongodb://127.0.0.1:27017/vlin';//本地数据库url
+//var dbUrl = 'mongodb://121.42.182.127:27017/vlin';//阿里云数据库url
 var db = mongoose.connect(dbUrl);//连接数据库
 
 //models loading
