@@ -37,15 +37,23 @@ exports.list =function(req,res){
         if(err){
             console.log(err);
         }
+        var categories = catetories;
 
         Flower
-            .find({flowers:catetories.flowers})
+            .find({flowers:categories.flowers})
             .populate('flowers','title')
-            .exec(function(err,flower){
+            .exec(function(err,flowers){
+                categories.forEach(function(item){
+                    item.flowersName = [];
+                    flowers.forEach(function(flo){
+                        if(flo.catetory.toString() === item._id.toString()){
+                            item.flowersName.push(flo.title);
+                        }
+                    });
+                });
                 res.render('catetorylist', {
                     title:'广州微林园林绿化工程有限公司-产品分类列表',
-                    catetories:catetories,
-                    flower: flower
+                    catetories:categories
                 })
             })
 

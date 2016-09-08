@@ -20,8 +20,10 @@
 .pb40{padding-bottom: 40px;}
 .pb50{padding-bottom: 50px;}
 .pb100{padding-bottom: 100px;}
-.pr20{padding-right: 20px;}
+.pr5{padding-right: 5px;}
+.pr10{padding-right: 10px;}
 .pr15{padding-right: 15px;}
+.pr20{padding-right: 20px;}
 .pr50{padding-right: 50px;}
 .pr70{padding-right: 70px;}
 .pr100{padding-right: 100px;}
@@ -74,3 +76,6 @@
 
 /*wrap*/
 .wrap{width: 1170px;}
+
+/*table*/
+.table>thead>tr>th, .table>tbody>tr>th, .table>tfoot>tr>th, .table>thead>tr>td, .table>tbody>tr>td, .table>tfoot>tr>td{vertical-align: middle;}

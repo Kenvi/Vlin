@@ -19,16 +19,8 @@ block content
                         td #{item.name}
                         td #{moment(item.meta.updateAt).format('MM/DD/YYYY')}
                         td
-                           each flo in flower
-                              span #{flo.title}
-                           //--for(var i=0;i<flower.length;i++){
-                              -for(var j=0;j<item.flowers.length;j++){
-                                 -if (item.flowers[j] = flower[i]._id){
-                                    #{flower[i].title}
-                                 -}
-                              -}
-
-                           //--}
+                           each flower in item.flowersName
+                              span.pr10 #{flower}
                         td: a(target="_blank",href="../admin/update/#{item._id}") 修改
                         td
                            button.btn.btn-danger.del(type="button",data-id="#{item._id}",data-class="catetory")  删除
