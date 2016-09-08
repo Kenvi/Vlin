@@ -167,7 +167,7 @@ $(function(){
 		setPosterPos:function(){
 			var   self = this;
 			var 	sliceItems  = this.posterItems.slice(1),
-				sliceSize     = sliceItems.size()/2,
+				sliceSize     = sliceItems.length/2,
 				rightSlice   = sliceItems.slice(0,sliceSize),
 				level            = Math.floor(this.posterItems.length/2),
 				leftSlice      =sliceItems.slice(sliceSize);
