@@ -67,6 +67,7 @@ module.exports = function(app){
 	app.get('/admin/banner/new',User.signinRequest,User.adminRequest,Banner.new);
 	app.post('/admin/banner',User.signinRequest,User.adminRequest,Banner.saveBanner,Banner.save);
 	app.get('/admin/banner/list',User.signinRequest,User.adminRequest,Banner.list);
+	app.get('/admin/banner/update/:id',User.signinRequest,User.adminRequest,Banner.update);
 	app.delete('/admin/banner/list',User.signinRequest,User.adminRequest, Banner.del);
 
 }

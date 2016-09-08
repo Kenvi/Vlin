@@ -14,10 +14,10 @@ block content
             .carousel-inner
                 - for(var j=0;j<banners.length;j++){
                     - if(j==0){
-                        a.item.active(href="/pro-list")
+                        a.item.active(href="#{banners[0].url}")
                             img(src="/upload/#{banners[0].banner}",alt="#{banners[0].name}")
                     - }else{
-                        a.item(href="/news")
+                        a.item(href="#{banners[j].url}")
                             img(src="/upload/#{banners[j].banner}",alt="#{banners[j].name}")
                     - }
                 - }

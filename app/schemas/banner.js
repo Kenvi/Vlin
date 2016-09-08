@@ -8,6 +8,7 @@ const Schema = mongoose.Schema;
 var BannerSchema  = new Schema({
     name : String,
     banner : String,
+    url : String,
     meta : {
         createAt : {
             type : Date,

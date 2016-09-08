@@ -15,6 +15,20 @@ exports.new = function(req,res){
     })
 };
 
+//admin update flower
+exports.update = function(req,res){
+    var id = req.params.id;
+
+    if(id){
+        Banner.findById(id,function(err,banner){
+            res.render('banner_admin',{
+                title:'广州微林园林绿化工程有限公司-banner更新页',
+                banner:banner
+            })
+        })
+    }
+};
+
 //admin save banner
 exports.saveBanner = function(req,res,next){
     var bannerData = req.files.uploadBanner;
@@ -34,25 +48,49 @@ exports.saveBanner = function(req,res,next){
             })
         })
     }else{
+        if(req.body.preBanner){
+            req.banner = req.body.preBanner;
+        }
         next();
     }
 };
 
+
 //admin post banner
 exports.save = function(req,res){
     var _banner = req.body.banner;
+    var id = _banner._id;
+    var banner;
+
     if(req.banner){
         _banner.banner = req.banner;
     }
-    var banner = new Banner(_banner);
 
-    banner.save(function(err,banner){
-        if(err){
-            console.log(err);
-        }
+    if(id){
+        Banner.findById(id, function (err,obanner) {
+            if(err){
+                console.log(err);
+            }
+            banner = _.extend(obanner,_banner);
+            console.log("1111"+banner);
+            banner.save(function(err,banner){
+                if(err){
+                    console.log(err);
+                }
+                res.redirect('/admin/banner/list' );
+            })
+        })
+    }else{
+        banner = new Banner(_banner);
+        banner.save(function(err,banner){
+            if(err){
+                console.log(err);
+            }
+            res.redirect('/admin/banner/list' );
+        })
+    }
 
-        res.redirect('/admin/banner/list' );
-    })
+
 
 };
 

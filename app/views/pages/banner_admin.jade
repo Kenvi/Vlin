@@ -6,13 +6,22 @@ block content
    .container.mt40
       .row
          form.form-horizontal(method="post", action="/admin/banner",enctype="multipart/form-data")
+            if banner._id
+               input(type="hidden",name="banner[_id]",value=banner._id)
             .form-group
                label.col-sm-2.control-label(for="inputTitle") banner名称
                .col-sm-10
                   input#inputTitle.form-control(type="text",name="banner[name]",value=banner.name)
             .form-group
+               label.col-sm-2.control-label(for="inputUrl") banner地址
+               .col-sm-10
+                  input#inputUrl.form-control(type="text",name="banner[url]",value=banner.url)
+            .form-group
                label.col-sm-2.control-label(for="uploadBanner") banner上传
                .col-sm-10
+                  if(banner.banner)
+                     img(src="/upload/#{banner.banner}",width="300px;")
+                  input#preBanner(type="hidden",name="preBanner",value=banner.banner)
                   input#uploadBanner(type="file",name="uploadBanner")
             .form-group
                .col-sm-offset-2.col-sm-10
