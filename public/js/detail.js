@@ -43,7 +43,7 @@ $(function(){
 		this.nextBtn               = poster.find("div.poster-next-btn");
 		this.prevBtn               = poster.find("div.poster-prev-btn");
 		this.posterItems        =poster.find("li.poster-item");
-		if(this.posterItems.size()%2==0){
+		if(this.posterItems.length%2==0){
 			this.posterItemMain.append(this.posterItems.eq(0).clone());
 			this.posterItems = this.posterItemMain.children();
 		}
@@ -169,7 +169,7 @@ $(function(){
 			var 	sliceItems  = this.posterItems.slice(1),
 				sliceSize     = sliceItems.size()/2,
 				rightSlice   = sliceItems.slice(0,sliceSize),
-				level            = Math.floor(this.posterItems.size()/2),
+				level            = Math.floor(this.posterItems.length/2),
 				leftSlice      =sliceItems.slice(sliceSize);
 
 			//设置右边帧的位置关系和宽度高度top
@@ -197,7 +197,7 @@ $(function(){
 			//设置左边的位置关系
 			var lw = rightSlice.last().width(),
 				lh  =rightSlice.last().height(),
-				oloop = Math.floor(this.posterItems.size()/2);
+				oloop = Math.floor(this.posterItems.length/2);
 			leftSlice.each(function(i){
 				$(this).css({
 					zIndex:i,
@@ -243,12 +243,12 @@ $(function(){
 			this.nextBtn.css({
 				width:w,
 				height:this.setting.height,
-				zIndex:Math.ceil(this.posterItems.size()/2)
+				zIndex:Math.ceil(this.posterItems.length/2)
 			});
 			this.prevBtn.css({
 				width:w,
 				height:this.setting.height,
-				zIndex:Math.ceil(this.posterItems.size()/2)
+				zIndex:Math.ceil(this.posterItems.length/2)
 			});
 
 			this.posterFirstItem.css({
@@ -256,7 +256,7 @@ $(function(){
 				height:this.setting.posterHeight,
 				left:w,
 				top:0,
-				zIndex:Math.floor(this.posterItems.size()/2)
+				zIndex:Math.floor(this.posterItems.length/2)
 			});
 		},
 		//获取人工配置参数
