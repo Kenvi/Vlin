@@ -58,8 +58,7 @@ if('development' === env){//开发环境调试输出内容
 require('./config/routes')(app);
 app.use(express.static(path.join(__dirname, 'public')));//使用路径模块设置静态资源默认路径
 app.locals.moment = require('moment');//日期格式化模块
-//app.listen(80,'121.42.182.127');
-app.listen(port);
+app.listen(80,'121.42.182.127');
 
 //console.log('Server start on port ' + port);
 
