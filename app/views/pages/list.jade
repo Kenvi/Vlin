@@ -13,17 +13,15 @@ block content
          each cat in catetories
             li.col-md-2(data-id="#{cat._id}") #{cat.name}
       .row.mt40.list-content
-         each cat in catetories
-            if cat.flowers && cat.flowers.length > 0
-               each item in cat.flowers
-                  .col-md-3.mt20.pro(data-cat="#{item.catetory}")
-                     a.d-b.pro-show.p-r(href="/flower/#{item._id}")
-                        img(src="/upload/#{item.thumbnail}",alt="#{item.title}",width="260",height="260")
-                        .pro-back.p-a.pt20
-                           h4 价格：¥#{item.price}
-                           h4 适合：#{item.scenarios}
-                           h4.text-center 立即查看
-                     h4.text-center #{item.title}
+         each item in flowers
+            .col-md-3.mt20.pro(data-cat="#{item.catetory}")
+               a.d-b.pro-show.p-r(href="/flower/#{item._id}")
+                  img(src="/upload/#{item.thumbnail}",alt="#{item.title}",width="260",height="260")
+                  .pro-back.p-a.pt20
+                     h4 价格：¥#{item.price}
+                     h4 适合：#{item.scenarios}
+                     h4.text-center 立即查看
+               h4.text-center #{item.title}
       ul.pagination.pull-right
 
       //-.row.mt100

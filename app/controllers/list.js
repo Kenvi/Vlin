@@ -15,11 +15,25 @@ exports.proList = function (req,res) {
             if(err){
                 console.log(err);
             }
-            res.render('list', {
-                title:'广州微林园林绿化工程有限公司-产品列表',
-                bodytype:'pro-list',
-                catetories:catetories
-            })
+            Flower
+                .find({})
+                .exec(function(err,flowers){
+                    if(err){
+                        console.log(err);
+                    }
+                    flowers.sort(function(a,b){
+                        return b.recommend - a.recommend;	//按推荐指数由高到低排列
+                    });
+
+                    res.render('list', {
+                        title:'广州微林园林绿化工程有限公司-产品列表',
+                        bodytype:'pro-list',
+                        catetories:catetories,
+                        flowers:flowers
+                    })
+
+                })
+
         })
 
 };
