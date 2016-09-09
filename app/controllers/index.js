@@ -11,7 +11,9 @@ exports.index =  function(req,res){
 			if(err){
 				console.log(err);
 			}
-
+			flowers.sort(function(a,b){
+				return b.recommend - a.recommend;	//按推荐指数由高到低排列
+			});
 			Banner.find({},function(err,banners){
 				if(err){
 					console.log(err);
