@@ -16,7 +16,7 @@ module.exports = function(app){
 		var _user = req.session.user;
 		app.locals.user = _user;
 		 next();
-	})
+	});
 
 	//index 
 	app.get('/',Index.index);
@@ -70,4 +70,7 @@ module.exports = function(app){
 	app.get('/admin/banner/update/:id',User.signinRequest,User.adminRequest,Banner.update);
 	app.delete('/admin/banner/list',User.signinRequest,User.adminRequest, Banner.del);
 
-}
+	//Admin
+	app.get('/admin/index',User.signinRequest,User.adminRequest,User.index);
+
+};

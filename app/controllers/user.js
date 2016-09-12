@@ -57,8 +57,12 @@ exports.signin =function(req,res){
 				console.log(err);
 			}
 			if(isMatch){//密码是否匹配
-				req.session.user = user;				
-				return res.redirect('/');
+				req.session.user = user;
+				if(user.role > 50){
+					return res.redirect('/admin/index')
+				}else{
+					return res.redirect('/');
+				}
 			}else{
 				//console.log(isMatch);
 				return res.redirect('/signin');
@@ -71,6 +75,13 @@ exports.signin =function(req,res){
 exports.logout =function(req,res){
 	delete req.session.user;
 	res.redirect('/');
+};
+
+//admin index page
+exports.index = function(req,res){
+	res.render('admin_index',{
+		title:'广州微林园林绿化工程有限公司-后台编辑首页'
+	})
 };
 
 //userlist page
@@ -96,7 +107,7 @@ exports.signinRequest =function(req,res,next){
 	}
 	next();
 		
-}
+};
 
 exports.adminRequest =function(req,res,next){
 	var user = req.session.user;	
@@ -104,7 +115,7 @@ exports.adminRequest =function(req,res,next){
 		return res.redirect('/signin')		
 	}
 	next();
-}
+};
 
 //list delete user
 exports.del = function(req,res){
@@ -118,4 +129,4 @@ exports.del = function(req,res){
 			}
 		})
 	}
-}
+};

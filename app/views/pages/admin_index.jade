@@ -1,0 +1,32 @@
+extends ../layout
+block content
+   .container.mt40
+      .row
+         .col-md-6
+            h3 产品
+            ul
+               li: a(href="/admin/flower/new") 新建产品
+               li: a(href="/admin/flower/list") 产品列表
+               li: a(href="/admin/catetory/new") 新建产品类别
+               li: a(href="/admin/catetory/list") 产品类别列表
+         .col-md-6
+            h3 用户
+            ul
+               li: a(href="/admin/user/list") 用户列表
+      .row.mt40
+         .col-md-6
+            h3 新闻列表
+            ul
+               li: a(href="/admin/news/new") 新建新闻
+               li: a(href="/admin/news/list") 新闻列表
+         .col-md-6
+            h3 养护知识
+            ul
+               li: a(href="/admin/knowledge/new") 新建养护知识
+               li: a(href="/admin/knowledge/list") 养护知识列表
+      .row.mt40
+         .col-md-6
+            h3 首页banner
+            ul
+               li: a(href="/admin/banner/new") 新建banner
+               li: a(href="/admin/banner/list") banner列表
