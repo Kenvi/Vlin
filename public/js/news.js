@@ -1,24 +1,55 @@
-$(function () {
-   $('.nav.navbar-nav li').click(function(){
-       $(this).addClass('active').siblings().removeClass('active');
-       var index = $('.nav.navbar-nav li').index(this);
-       var title = $('.col-md-9.pl25').find('h2');
-       if(index == 0){
-            title.html('广州微林园林绿化工程有限公司企业网站正式上线啦')
-       }
-       if(index == 1){
-           title.html('广州微林园林绿化工程有限公司企业网站又上线啦')
-       }
-       if(index == 2){
-           title.html('广州微林园林绿化工程有限公司企业网站再次上线啦')
-       }
-       if(index == 3){
-           title.html('广州微林园林绿化工程有限公司企业网站还会上线吗')
-       }
-       if(index == 4){
-           title.html('广州微林园林绿化工程有限公司企业网站掉线了')
-       }
-   });
+(function(){
+  var config = {
+    //liIndex:$('.nav.navbar-nav li').index($('.nav.navbar-nav li.active')),
+    liLen:$('.nav.navbar-nav li').length,
+    init:function(){
+      // 初始化
+      $('.news-item').eq(0).show(); 
+      $('.nav.navbar-nav li').eq(0).addClass('active');
+      $('.pull-right').find('a').text($('.nav.navbar-nav li').eq(1).text());
+    },
+    newsChange:function(index){
 
+      if(index < 0){
+        $('.pull-left').find('a').text('当前为第一篇');
+        return;
+      }else if(index >= $('.nav.navbar-nav li').length){
+        $('.pull-right').find('a').text('当前为最后一篇');
+        return;
+      }else{
+        $('.nav.navbar-nav li').removeClass('active');
+        $('.nav.navbar-nav li').eq(index).addClass('active');
+        $('.news-item').hide();
+        $('.news-item').eq(index).show();
 
-});
+        var titPre = $('.nav.navbar-nav li').eq(index-1).text();
+        if(index-1 < 0){titPre = '当前为第一篇'}
+        var titNext = $('.nav.navbar-nav li').eq(index+1).text();
+
+        $('.pull-left').find('a').text(titPre);
+        $('.pull-right').find('a').text(titNext || '当前为最后一篇');
+      }
+    },
+    tabClick:function(){
+      $('.nav.navbar-nav li').click(function(){
+          var index = $('.nav.navbar-nav li').index(this);
+          config.newsChange(index);
+      });
+    },
+    titClick:function(){
+      $('.tit-click a').click(function(){
+        var index = $('.nav.navbar-nav li').index($('.nav.navbar-nav li.active'));
+        var eq = $('.tit-click a').index($(this));
+
+        switch(eq){
+          case 0 : config.newsChange(index-1);break;
+          case 1 : config.newsChange(index+1);break;
+        }
+      });
+    }
+  };
+  config.init();
+  config.tabClick();
+  config.titClick();
+
+})();

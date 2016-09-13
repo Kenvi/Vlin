@@ -38,6 +38,7 @@
 .index .news .title-content{background: url("../images/title-content_green-bg.png") center top no-repeat;}
 .index .news a.news-content{color: #fff;border-bottom: 1px dashed #fff;}
 .index .news a.news-content h4{margin-bottom: 0;}
+.index .news a.news-content p{height: 60px;overflow: hidden;}
 .index .contact{min-width: 1170px;}
 .pro-show{width: 100%;padding:0;margin: 0 auto;box-sizing:border-box; transform-style: preserve-3d;transition:transform 0.5s ease-in-out,left 0.5s ease-in-out,top 0.5s ease-in-out;}
 .pro-show.is-inverse{transform:rotateY(180deg);-webkit-transform:rotateY(180deg);-moz-transform:rotateY(180deg);}

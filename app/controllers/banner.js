@@ -72,7 +72,6 @@ exports.save = function(req,res){
                 console.log(err);
             }
             banner = _.extend(obanner,_banner);
-            console.log("1111"+banner);
             banner.save(function(err,banner){
                 if(err){
                     console.log(err);

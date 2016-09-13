@@ -1,0 +1,19 @@
+extends ../layout
+
+block content
+	.container.mt40
+		.row
+			form.form-horizontal(method="post", action="/admin/news",enctype="multipart/form-data")
+				if news._id
+					input(type="hidden",name="news[_id]",value=news._id)
+				.form-group
+					label.col-sm-2.control-label(for="inputTitle") 新闻标题
+					.col-sm-10
+						input#inputTitle.form-control(type="text",name="news[title]",value=news.title)
+				.form-group
+					label.col-sm-2.control-label(for="inputContent") 新闻内容
+					.col-sm-10
+						textarea#inputContent.form-control(name="news[content]",rows="5") #{news.content}
+				.form-group
+					.col-sm-offset-2.col-sm-10
+					button.btn.btn-default(type="submit")  录入
