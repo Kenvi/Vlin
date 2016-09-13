@@ -48,13 +48,13 @@ app.use(session({
 	})
 }));
 
-var env = process.env.NODE_ENV || 'development';
-if('development' === env){//开发环境调试输出内容
-	app.set('showStarkError',true);//堆栈出错
-	app.use(logger(':method :url :status'));//输出请求方式 地址 状态码
-	app.locals.pretty = true;
-	mongoose.set('debug',true);//数据库变化输出
-}
+//var env = process.env.NODE_ENV || 'development';
+//if('development' === env){//开发环境调试输出内容
+//	app.set('showStarkError',true);//堆栈出错
+//	app.use(logger(':method :url :status'));//输出请求方式 地址 状态码
+//	app.locals.pretty = true;
+//	mongoose.set('debug',true);//数据库变化输出
+//}
 require('./config/routes')(app);
 app.use(express.static(path.join(__dirname, 'public')));//使用路径模块设置静态资源默认路径
 app.locals.moment = require('moment');//日期格式化模块
