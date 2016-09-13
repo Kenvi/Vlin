@@ -32,6 +32,11 @@ module.exports = function(app){
 
 	//news
 	app.get('/news',News.news);
+	app.get('/admin/news/new',User.signinRequest,User.adminRequest,News.new);
+	app.get('/admin/news/update/:id',User.signinRequest,User.adminRequest,News.update);
+	app.get('/admin/news/list',User.signinRequest,User.adminRequest,News.list);
+	app.post('/admin/news',User.signinRequest,User.adminRequest,News.save);
+	app.delete('/admin/news/list',User.signinRequest,User.adminRequest, News.del);
 
 	//User
 	app.post('/user/signup',User.signup);	
