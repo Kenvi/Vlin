@@ -1,6 +1,7 @@
 const Flower = require('../models/flower');
 const Catetory = require('../models/catetory');
 const Banner = require('../models/banner');
+const News = require('../models/news');
 
 
 //index page
@@ -8,22 +9,20 @@ exports.index =  function(req,res){
 	Flower
 		.find({'recommend' : {$gt : 5}})
 		.exec(function(err,flowers){
-			if(err){
-				console.log(err);
-			}
 			flowers.sort(function(a,b){
 				return b.recommend - a.recommend;	//按推荐指数由高到低排列
 			});
-			Banner.find({},function(err,banners){
-				if(err){
-					console.log(err);
-				}
-				res.render('index', {
-					title:'广州微林园林绿化工程有限公司-首页',
-					bodytype:'index',
-					flowers:flowers,
-					banners:banners
-				})
+			Banner.fetch(function(err,banners){
+				News.fetch(function(err,news){
+					res.render('index', {
+						title:'广州微林园林绿化工程有限公司-首页',
+						bodytype:'index',
+						flowers:flowers,
+						banners:banners,
+						news:news
+					})
+				});
+
 			})
 
 		})

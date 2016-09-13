@@ -3,7 +3,7 @@
     //liIndex:$('.nav.navbar-nav li').index($('.nav.navbar-nav li.active')),
     liLen:$('.nav.navbar-nav li').length,
     init:function(){
-      // init
+      // 初始化
       $('.news-item').eq(0).show(); 
       $('.nav.navbar-nav li').eq(0).addClass('active');
       $('.pull-right').find('a').text($('.nav.navbar-nav li').eq(1).text());
@@ -51,8 +51,5 @@
   config.init();
   config.tabClick();
   config.titClick();
-    
-     
-
 
 })();
