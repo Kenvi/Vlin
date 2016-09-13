@@ -8,35 +8,23 @@ block content
             .navbar.navbar-success(role="navigation")
                h3.bg-green.c-f.fs18 新闻列表
                ul.nav.navbar-nav
-                  li.active
-                     a(href="##") 微林上线啦
-                  li
-                     a(href="##") 微林又上线啦
-                  li
-                     a(href="##") 微林再次上线
-                  li
-                     a(href="##") 微林还会上线
-                  li
-                     a(href="##") 微林掉线了
+                  each item in news
+                     li
+                        a(href="javascript:void(0);") #{item.title}
          .col-md-9.pl25
-            h2.text-center 广州微林园林绿化工程有限公司企业网站正式上线啦
-            p.fs14.c-9.text-center 2015.11.11
-            hr
-            .news-content.fs18 #{newsContent1}
-            .news-content.fs18 #{newsContent2}
-            .news-content.fs18 #{newsContent3}
-            .news-content.fs18 #{newsContent4}
-            .news-content.fs18 #{newsContent5}
-            .news-content.fs18 #{newsContent6}
-            .news-content.fs18 #{newsContent7}
-            .news-content.fs18 #{newsContent8}
-            .news-content.fs18 #{newsContent9}
+            each item in news
+               .news-item.d-n
+                  h2.text-center #{item.title}
+                  p.fs14.c-9.text-center #{moment(item.meta.updateAt).format('MM/DD/YYYY')}
+                  hr
+                  each con in item.content
+                     .news-content.fs18 #{con}
             hr
             .pb10
                .pull-left
                   span 上一篇：&nbsp;&nbsp;
-                  a(href="##") 微林上线啦
+                  a(href="javascript:void(0);") --
                .pull-right
                   span 下一篇：&nbsp;&nbsp;
-                  a(href="##") 微林又上线啦
+                  a(href="javascript:void(0);") --
    script(src="/js/news.js")
