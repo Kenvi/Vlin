@@ -9,7 +9,7 @@ block content
                h3.bg-green.c-f.fs18 新闻列表
                ul.nav.navbar-nav
                   each item in news
-                     li
+                     li(data-id="#{item._id}")
                         a(href="javascript:void(0);") #{item.title}
          .col-md-9.pl25
             each item in news

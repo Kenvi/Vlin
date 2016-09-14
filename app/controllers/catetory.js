@@ -12,23 +12,55 @@ exports.new = function(req,res){
         title:'广州微林园林绿化工程有限公司-产品分类录入',
         catetory:{}
     })
-}
+};
 
+//admin update page
+exports.update = function(req,res){
+    var id = req.params.id;
+    if(id){
+        Catetory.findById(id,function(err,catetory){
+            res.render('catetory_admin', {
+                title:'广州微林园林绿化工程有限公司-产品分类录入change',
+                catetory:catetory
+            })
+        });
+    }    
+}
 
 //admin post catetory
 exports.save = function(req,res){
     var _catetory = req.body.catetory;
-    var catetory = new Catetory(_catetory);
+    switch(_catetory.knowledge){
+        case 'true' : _catetory.knowledge = true;break;
+        case 'false' : _catetory.knowledge = false;break;
+    }
+    var id = _catetory._id;
+    var catetory ;
+    if(id){
+        Catetory.findById(id,function(err,oldCatetory){
+            catetory = _.extend(oldCatetory,_catetory);
+            catetory.save(function(err,catetory){
+                if(err){
+                    console.log(err);
+                }
 
-    catetory.save(function(err,catetory){
-        if(err){
-            console.log(err);
-        }
+                res.redirect('/admin/catetory/list' );
+            })
+        });
+    }else{
+        catetory = new Catetory(_catetory);
+        catetory.save(function(err,catetory){
+            if(err){
+                console.log(err);
+            }
 
-        res.redirect('/admin/catetory/list' );
-    })
+            res.redirect('/admin/catetory/list' );
+        })
+    }
 
-}
+    
+
+};
 
 //catelist page
 exports.list =function(req,res){

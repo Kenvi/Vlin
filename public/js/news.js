@@ -4,9 +4,21 @@
     liLen:$('.nav.navbar-nav li').length,
     init:function(){
       // 初始化
-      $('.news-item').eq(0).show(); 
-      $('.nav.navbar-nav li').eq(0).addClass('active');
-      $('.pull-right').find('a').text($('.nav.navbar-nav li').eq(1).text());
+      var index;
+      $('.nav.navbar-nav li').each(function(i,item){
+        if($(item).attr('data-id') === config.getQueryString('newsId')){
+          index = i;
+          return;
+        }
+        index = 0;
+        return
+      });
+      config.newsChange(index);
+    },
+    getQueryString:function(name){
+      var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i"); 
+      var r = window.location.search.substr(1).match(reg); 
+      if (r != null) return unescape(r[2]); return null; 
     },
     newsChange:function(index){
 

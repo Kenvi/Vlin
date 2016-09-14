@@ -11,6 +11,7 @@ block content
                   th 分类名称
                   th 录入时间
                   th 包含产品
+                  th show knowledge
                   th 更新
                   th 删除
                tbody
@@ -21,7 +22,8 @@ block content
                         td
                            each flower in item.flowersName
                               span.pr10 #{flower}
-                        td: a(target="_blank",href="../admin/update/#{item._id}") 修改
+                        td #{item.knowledge}
+                        td: a(target="_blank",href="/admin/catetory/update/#{item._id}") 修改
                         td
                            button.btn.btn-danger.del(type="button",data-id="#{item._id}",data-class="catetory")  删除
    script(src="/js/admin.js")

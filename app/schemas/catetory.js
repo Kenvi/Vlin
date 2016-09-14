@@ -9,6 +9,10 @@ const ObjectId = Schema.Types.ObjectId;
 var CatetorySchema  = new Schema({
     name : String,
     flowers : [{type:ObjectId,ref:'Flower'}],
+    knowledge : {
+        type:Boolean,
+        default:false
+    },
     meta : {
         createAt : {
             type : Date,

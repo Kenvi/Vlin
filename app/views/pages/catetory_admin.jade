@@ -6,10 +6,28 @@ block content
    .container.mt40
       .row
          form.form-horizontal(method="post", action="/admin/catetory")
+            if catetory._id
+               input(type="hidden",name="catetory[_id]",value=catetory._id)
             .form-group
-               label.col-sm-2.control-label(for="inputCatetory") 产品分类
+               label.col-sm-2.control-label(for="inputCatetoryType") 产品分类
                .col-sm-10
-                  input#inputTitle.form-control(type="text",name="catetory[name]",value=catetory.name)
+                  input#inputCatetoryType.form-control(type="text",name="catetory[name]",value=catetory.name)
+            .form-group
+               label.col-sm-2.control-label(for="") show knowledge
+               if catetory.knowledge
+                  label.radio-inline                  
+                     input(type="radio",name="catetory[knowledge]",value="true",checked="true")
+                     | true
+                  label.radio-inline
+                     input(type="radio",name="catetory[knowledge]",value="false" )
+                     | false
+               else
+                  label.radio-inline                  
+                     input(type="radio",name="catetory[knowledge]",value="true")
+                     | true
+                  label.radio-inline
+                     input(type="radio",name="catetory[knowledge]",value="false",checked="true")
+                     | false
             .form-group
                .col-sm-offset-2.col-sm-10
                button.btn.btn-default(type="submit")  录入
