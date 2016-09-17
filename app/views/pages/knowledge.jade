@@ -7,28 +7,13 @@ block content
                 .navbar.navbar-success(role="navigation")
                     h3.bg-green.c-f.fs18 养护知识
                     ul.nav.navbar-nav
-                        li.dropdown
-                            a(href="##",data-toggle="dropdown",class="dropdown-toggle") 小盆栽
-                               span.caret
-                            ul.dropdown-menu
-                               li: a.text-center.fs14(href="##") 仙人球
-                               li: a.text-center.fs14(href="##") 发财树
-                               li: a.text-center.fs14(href="##") 网纹花
-                        li.dropdown
-                            a(href="##",data-toggle="dropdown",class="dropdown-toggle") 大盆栽
-                               span.caret
-                            ul.dropdown-menu
-                               li: a.text-center.fs14(href="##") 步步高发财树
-                               li: a.text-center.fs14(href="##") 单株发财树
-                               li: a.text-center.fs14(href="##") 巴西木
-                        li.dropdown
-                            a(href="##",data-toggle="dropdown",class="dropdown-toggle") 花束
-                               span.caret
-                            ul.dropdown-menu
-                               li: a.text-center.fs14(href="##") 香槟玫瑰
-                               li: a.text-center.fs14(href="##") 组合玫瑰
-                               li: a.text-center.fs14(href="##") 桔梗
-
+                        each item in knowledges
+                            li.dropdown
+                                a(href="##",data-toggle="dropdown",class="dropdown-toggle") #{item.name}
+                                   span.caret
+                                ul.dropdown-menu
+                                    each tab in item.flowersName
+                                       li: a.text-center.fs14(data-id="#{tab.id}",href="##{tab.id}") #{tab.title}
             .col-md-9.pl25
                 h2.text-center 步步高发财树
                 p.fs14.c-9.text-center 2015.11.11

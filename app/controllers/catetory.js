@@ -20,7 +20,7 @@ exports.update = function(req,res){
     if(id){
         Catetory.findById(id,function(err,catetory){
             res.render('catetory_admin', {
-                title:'广州微林园林绿化工程有限公司-产品分类录入change',
+                title:'广州微林园林绿化工程有限公司-产品分类录入更新',
                 catetory:catetory
             })
         });

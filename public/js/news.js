@@ -11,7 +11,7 @@
           return;
         }
         index = 0;
-        return
+        return;
       });
       config.newsChange(index);
     },
