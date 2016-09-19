@@ -1,7 +1,7 @@
 extends ../layout
 block content
     img(src="/images/knowledge-bannerbg.jpg",align="center",width="100%",style="min-width:1170px")
-    .container.mt100.pb100
+    .container.mt100.pb100.min-h
         .row
             .col-md-3.fs18.text-center
                 .navbar.navbar-success(role="navigation")
@@ -15,23 +15,18 @@ block content
                                     each tab in item.flowersName
                                        li: a.text-center.fs14(data-id="#{tab.id}",href="##{tab.id}") #{tab.title}
             .col-md-9.pl25
-                h2.text-center 步步高发财树
-                p.fs14.c-9.text-center 2015.11.11
+                each item in flowers
+                    .knowledge-item.d-n(data-id="#{item._id}")
+                        h2.text-center #{item.title}
+                        p.fs14.c-9.text-center #{moment(item.meta.updateAt).format('MM/DD/YYYY')}
+                        hr
+                        .news-content.fs18 #{item.conservation}
                 hr
-                .news-content.fs18 #{newsContent1}
-                .news-content.fs18 #{newsContent2}
-                .news-content.fs18 #{newsContent3}
-                .news-content.fs18 #{newsContent4}
-                .news-content.fs18 #{newsContent5}
-                .news-content.fs18 #{newsContent6}
-                .news-content.fs18 #{newsContent7}
-                .news-content.fs18 #{newsContent8}
-                .news-content.fs18 #{newsContent9}
-                hr
-                .pb10
+                .pb10.tit-click
                     .pull-left
                         span 上一篇：&nbsp;&nbsp;
-                        a(href="##") 微林上线啦
+                        a(href="javascript:void(0);") 微林上线啦
                     .pull-right
                         span 下一篇：&nbsp;&nbsp;
-                        a(href="##") 微林上线啦
+                        a(href="javascript:void(0);") 微林上线啦
+    script(src="/js/knowledge.js")
